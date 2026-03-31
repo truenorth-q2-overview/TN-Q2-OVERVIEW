@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1st Grade | True North School Q2 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --purple: #4a3a6b; --purple-light: #6b5b8a; --purple-dark: #2d2243;
+      --accent: #c4a63a; --accent-light: #f5efd4; --warm-bg: #faf8f5;
+      --text: #2d2243; --text-light: #6b6580; --white: #ffffff;
+      --border: #e8e4ef; --section-alt: #f3f0f8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--warm-bg); line-height: 1.7; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--purple); text-decoration: none; }
+    .nav-logo .q-badge { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700; background: var(--accent); color: var(--white); padding: 0.12rem 0.4rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+    .back-link { font-size: 0.82rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .back-link:hover { color: var(--purple); }
+
+    .hero { margin-top: 56px; background: linear-gradient(135deg, #3d3520 0%, #6b6030 40%, #8a7d3b 70%, var(--purple-dark) 100%); color: var(--white); padding: 3.5rem 2rem 3rem; text-align: center; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--purple); margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+    h2:first-of-type { margin-top: 0; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--purple-dark); margin: 1.25rem 0 0.4rem; }
+    h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin: 1rem 0 0.3rem; }
+    p { margin-bottom: 1rem; font-size: 0.92rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 1rem 1.25rem; font-size: 0.92rem; }
+    ul li { margin-bottom: 0.35rem; }
+    ul li::marker { color: var(--accent); }
+
+    .subject-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+    .subject-card h2 { margin-top: 0; border: none; padding-bottom: 0; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .subject-card h2 .icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
+    .icon-lal { background: #e0f0e8; }
+    .icon-math { background: #fce4ec; }
+    .icon-pbl { background: #fff3dc; }
+    .icon-esp { background: #dceeff; }
+
+    .subsection { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0; }
+    .subsection h4 { margin-top: 0; }
+
+    .pbl-highlight { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.7; }
+    .pbl-highlight strong { color: var(--purple); }
+
+    .focus-box { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0 1rem; }
+    .focus-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+
+    .assessment-box { background: #f9f5ff; border: 1px solid #e8dff5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .assessment-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+
+    .contacts { background: var(--section-alt); border-radius: 10px; padding: 1.5rem 2rem; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .contact-block h4 { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
+    .contact-block .name { font-weight: 700; font-size: 0.92rem; }
+    .contact-block a { font-size: 0.82rem; color: var(--purple); text-decoration: none; display: block; margin-top: 0.15rem; }
+    .contact-block a:hover { text-decoration: underline; }
+    .contact-block .phone { font-size: 0.82rem; color: var(--text-light); margin-top: 0.1rem; }
+
+    .home-btn-wrap { text-align: center; margin-top: 2.5rem; }
+    .home-btn { display: inline-block; background: var(--purple); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.65rem 2rem; border-radius: 8px; transition: background 0.2s; }
+    .home-btn:hover { background: var(--purple-dark); }
+
+    footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.75rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+
+    @media (max-width: 600px) { .content { padding: 2rem 1.25rem; } .contacts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="overview-q2.html" class="nav-logo">True North School <span class="q-badge">Q2</span></a>
+    <a href="overview-q2.html" class="back-link">&larr; Back to Overview</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Lower Elementary &middot; Quarter II 2026</p>
+  <h1>1st Grade</h1>
+</header>
+
+<div class="content">
+
+  <!-- LANGUAGE ARTS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-lal">&#x1F4D6;</span> Language Arts</h2>
+
+    <h3>Reading Workshop</h3>
+    <p>During reading workshop students will apply the skills they've learned, to read nonfiction texts. Students will learn how to approach nonfiction text as well as study text features to understand content-specific words and learn more about a topic. We will be drawing connections to the project as much as possible. Finally, students will be able to tell their peers what they learned about different topics.</p>
+
+    <h3>Writing Workshop</h3>
+    <p>This quarter, students will learn how to write informative and explanatory texts where they introduce a topic or text being studied and supply facts using specific words that are related to that topic, follow a sense of order in writing and create some sort of closure. We will use information learned during the reading workshop and project. We will be focusing on printing legibly all the upper and lower cases, using correct punctuation and capitalizations. In addition to that, we will learn how to use a comma and spell words correctly with similar spellings.</p>
+
+    <h3>Phonics</h3>
+    <p>This quarter students will study:</p>
+    <ul>
+      <li>S, L, and R blends</li>
+      <li>Final blends: s, t, l, -mp, -nd and digraph blend -nch</li>
+      <li>Glued sounds with -ng, nk</li>
+      <li>Suffixes: -s, -es, -ing, -ed</li>
+      <li>Contractions</li>
+    </ul>
+
+    <h3>Phonological Awareness</h3>
+    <p>First graders will also be practicing phonological awareness skills. Phonological awareness refers to the ability to hear and manipulate sounds in words. Strong phonological awareness contributes to children's reading success. Skills studied this quarter include:</p>
+    <ul>
+      <li>Phoneme substitution</li>
+      <li>Blending and segmenting</li>
+      <li>Matching final blends</li>
+      <li>Syllable division rules</li>
+    </ul>
+  </div>
+
+  <!-- MATHEMATICS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-math">&#x1F522;</span> Mathematics</h2>
+    <p>In the second quarter of 1st grade, Units 3 and 4 continue to advance children's mathematical skills with innovative and engaging activities.</p>
+
+    <div class="subsection">
+      <h4>Unit 3 &mdash; Addition, Subtraction &amp; the Number System</h4>
+      <p>Focuses on enhancing children's understanding of addition and subtraction within 20. It introduces concepts like finding the missing addend, understanding the relationship between addition and subtraction, and exploring the counting sequence up to 120. These concepts are reinforced through practical activities like using number racks and solving story problems.</p>
+    </div>
+
+    <div class="subsection">
+      <h4>Unit 4 &mdash; Leapfrogs on the Number Line</h4>
+      <p>Takes a playful approach to math by using the context of frogs hopping on a number line. This unit deepens the understanding of number sequencing as children learn to locate, identify, and order numbers up to 120 on a number line. They practice counting forward and backward by 1s, 5s, and 10s, and use the number line for adding, subtracting, and solving word problems. Additionally, this unit introduces measurement, where children compare and measure heights in inches, integrating math with real-world concepts.</p>
+    </div>
+  </div>
+
+  <!-- PBL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-pbl">&#x1F3A8;</span> Project-Based Learning</h2>
+
+    <div class="pbl-highlight">
+      <strong>&ldquo;Plant &amp; Animal Unique Defenses&rdquo;</strong> &mdash; In this project, first grade students become young nature scientists as they explore how plants and animals protect themselves and survive in different habitats. They will discover that living things have special defenses&mdash;like shells, thorns, camouflage, and behaviors&mdash;that help them stay safe and meet their needs. Students will also learn about habitats such as rainforests, deserts, and oceans, and how these environments support different kinds of life.
+    </div>
+
+    <p>Through real photos, videos, stories, observations, and hands-on activities, children will study real plants and animals and connect their features to where they live. As part of a Reforestation Initiative, students will take action to care for nature. They will build simple models to show how defenses work and design their own imagined animals with unique defenses. The project will end with students creating a chapter book that explains the habitat and defenses of an animal they designed, showing their understanding in a creative and meaningful way.</p>
+
+    <p><strong>Driving Question:</strong> How can we, as biologists, study the animals and plants from different habitats that need our help to survive?</p>
+
+    <div class="focus-box">
+      <h4>Science Focus: Life Sciences &mdash; From Molecules to Organisms</h4>
+      <ul>
+        <li>Develop models to mimic plant and animal external parts for survival, growth, and needs</li>
+        <li>Reading texts to identify patterns in parent-offspring behavior aiding survival</li>
+        <li>Making observations to conclude that young plants and animals resemble, but are not identical to, their parents</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Social Studies Focus: Geography and Our Community (&ldquo;Nuestro Distrito&rdquo;)</h4>
+      <ul>
+        <li>Learning how events and people shape community and national history</li>
+        <li>Understanding the creation and significance of monuments in commemorating important people and events</li>
+        <li>Recognizing and respecting community rules and laws</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>PBL Skills Focus: Critical Thinking and Innovation</h4>
+      <ul>
+        <li><strong>Critical thinking:</strong> Students explain concepts using a mix of relevant examples and personal opinions. They make predictions, demonstrating an early ability to connect learning with real-life situations.</li>
+        <li><strong>Innovation:</strong> The product reflects unique additions. Students generate ideas and begin to understand how these ideas relate to the project's goals, especially when facilitated by teacher or peer input.</li>
+      </ul>
+    </div>
+
+    <div class="assessment-box">
+      <h4>Assessment</h4>
+      <ul>
+        <li><strong>Science and Social Studies Integration:</strong> Students will develop a model representing the external parts of a plant or animal that help with its survival. The model must include the habitat (rainforests, deserts, oceans) and demonstrate how these environments influence species adaptations. Students should be able to explain their models using vocabulary learned throughout the project.</li>
+        <li><strong>Participation in the movement to protect the Earth:</strong> Students will demonstrate their understanding of ecological concepts and biodiversity. They will also show comprehension of community rules, laws, and the significance of monuments in commemorating historical events and figures.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ESPA&Ntilde;OL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-esp">&#x1F1E8;&#x1F1F7;</span> Espa&ntilde;ol</h2>
+
+    <p><strong>Unidad:</strong> H&aacute;bitats Mundiales</p>
+    <p><strong>Actividades de Aprendizaje:</strong> Proyectos de investigaci&oacute;n de h&aacute;bitats, creaci&oacute;n de dioramas de h&aacute;bitats.</p>
+
+    <h3>An&aacute;lisis de Textos</h3>
+    <p>Durante este segundo bimestre, avanzaremos en el reconocimiento de nuevas consonantes: j, n, r, s, b, y v. Seleccionaremos textos cortos, como "Rassi en la librer&iacute;a" del Barco de Vapor, para aplicar las s&iacute;labas estudiadas. Este enfoque fortalecer&aacute; las habilidades de lectura y comprensi&oacute;n de los estudiantes.</p>
+
+    <h3>Producci&oacute;n Escrita</h3>
+    <p>En la producci&oacute;n escrita, nos concentraremos en textos descriptivos. Los estudiantes describir&aacute;n su cuarto y los personajes del texto "Rassi en la librer&iacute;a". Abordaremos el uso de la coma y el punto, as&iacute; como la concordancia entre el art&iacute;culo y el sustantivo.</p>
+
+    <h3>Producci&oacute;n Oral</h3>
+    <p>En la producci&oacute;n oral, exploraremos las consonantes h, k, &ntilde;, r, v, q, x, y, z. Los estudiantes aplicar&aacute;n estas consonantes al narrar la historia de "Gustavo y sus miedos", fomentando as&iacute; el desarrollo de habilidades de expresi&oacute;n oral y vocabulario.</p>
+
+    <div class="subsection">
+      <h4>Actividades</h4>
+      <p>Investigaci&oacute;n de h&aacute;bitats, creaci&oacute;n de dioramas, an&aacute;lisis de textos, descripci&oacute;n escrita de su entorno y personajes.</p>
+
+      <h4>Habilidades</h4>
+      <p>Reconocimiento de consonantes, habilidades de lectura, escritura descriptiva, expresi&oacute;n oral.</p>
+
+      <h4>Enfoque en Estudios Sociales</h4>
+      <p>Conexi&oacute;n entre los h&aacute;bitats y la importancia de compartir el planeta de manera sostenible.</p>
+
+      <h4>Evaluaci&oacute;n</h4>
+      <p>Se evaluar&aacute; el reconocimiento de consonantes, la capacidad de describir de manera escrita y oral, as&iacute; como la comprensi&oacute;n de textos.</p>
+
+      <h4>Proyecto</h4>
+      <p>Creaci&oacute;n de dioramas que representen h&aacute;bitats, integrando conocimientos de lectura y escritura.</p>
+
+      <h4>Metas</h4>
+      <p>Desarrollo integral de habilidades ling&uuml;&iacute;sticas, conciencia sobre la importancia del medio ambiente y la adaptaci&oacute;n en diferentes h&aacute;bitats.</p>
+    </div>
+
+    <p>Este segundo bimestre proporcionar&aacute; a los estudiantes experiencias significativas de aprendizaje, fomentando no solo el desarrollo de habilidades ling&uuml;&iacute;sticas, sino tambi&eacute;n la comprensi&oacute;n de la relaci&oacute;n entre los seres humanos y su entorno global.</p>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+    <div class="contact-block">
+      <h4>Student Support Coordinator</h4>
+      <div class="name">Paz Olgu&iacute;n</div>
+      <a href="mailto:paz@truenorthcr.education">paz@truenorthcr.education</a>
+      <div class="phone">8863.4298</div>
+    </div>
+    <div class="contact-block">
+      <h4>Front Desk</h4>
+      <div class="name">Krissia Mu&ntilde;oz</div>
+      <a href="mailto:krissia@truenorthcr.education">krissia@truenorthcr.education</a>
+      <div class="phone">4033.4515</div>
+    </div>
+  </div>
+
+  <div class="home-btn-wrap">
+    <a href="overview-q2.html" class="home-btn">&larr; Back to Overview</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 True North School. Escaz&uacute;, Costa Rica.</footer>
+
+</body>
+</html>

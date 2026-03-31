@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6th Grade | True North School Q2 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --purple: #4a3a6b; --purple-light: #6b5b8a; --purple-dark: #2d2243; --accent: #c4a63a; --accent-light: #f5efd4; --warm-bg: #faf8f5; --text: #2d2243; --text-light: #6b6580; --white: #ffffff; --border: #e8e4ef; --section-alt: #f3f0f8; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--warm-bg); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--purple); text-decoration: none; }
+    .nav-logo .q-badge { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700; background: var(--accent); color: var(--white); padding: 0.12rem 0.4rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+    .back-link { font-size: 0.82rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .back-link:hover { color: var(--purple); }
+    .hero { margin-top: 56px; background: linear-gradient(135deg, #3d3520 0%, #6b6030 40%, #8a7d3b 70%, var(--purple-dark) 100%); color: var(--white); padding: 3.5rem 2rem 3rem; text-align: center; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--purple); margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+    h2:first-of-type { margin-top: 0; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--purple-dark); margin: 1.25rem 0 0.4rem; }
+    h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin: 1rem 0 0.3rem; }
+    p { margin-bottom: 1rem; font-size: 0.92rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 1rem 1.25rem; font-size: 0.92rem; }
+    ul li { margin-bottom: 0.35rem; }
+    ul li::marker { color: var(--accent); }
+    .subject-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+    .subject-card h2 { margin-top: 0; border: none; padding-bottom: 0; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .subject-card h2 .icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
+    .icon-lal { background: #e0f0e8; } .icon-math { background: #fce4ec; } .icon-sci { background: #fff3dc; } .icon-esp { background: #dceeff; }
+    .subsection { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0; }
+    .subsection h4 { margin-top: 0; }
+    .focus-box { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0 1rem; }
+    .focus-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .assessment-box { background: #f9f5ff; border: 1px solid #e8dff5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .assessment-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .contacts { background: var(--section-alt); border-radius: 10px; padding: 1.5rem 2rem; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .contact-block h4 { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
+    .contact-block .name { font-weight: 700; font-size: 0.92rem; }
+    .contact-block a { font-size: 0.82rem; color: var(--purple); text-decoration: none; display: block; margin-top: 0.15rem; }
+    .contact-block a:hover { text-decoration: underline; }
+    .contact-block .phone { font-size: 0.82rem; color: var(--text-light); margin-top: 0.1rem; }
+    .home-btn-wrap { text-align: center; margin-top: 2.5rem; }
+    .home-btn { display: inline-block; background: var(--purple); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.65rem 2rem; border-radius: 8px; transition: background 0.2s; }
+    .home-btn:hover { background: var(--purple-dark); }
+    footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.75rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+    @media (max-width: 600px) { .content { padding: 2rem 1.25rem; } .contacts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="overview-q2.html" class="nav-logo">True North School <span class="q-badge">Q2</span></a>
+    <a href="overview-q2.html" class="back-link">&larr; Back to Overview</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Middle School &middot; Quarter II 2026</p>
+  <h1>6th Grade</h1>
+</header>
+
+<div class="content">
+
+  <!-- LANGUAGE ARTS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-lal">&#x1F4D6;</span> Language Arts</h2>
+
+    <h3>Reading Workshop</h3>
+    <p>Students will delve into impactful historical events that inspired books. By grasping essential facts about historical eras, they aim to comprehend why authors make specific choices regarding inclusion or omission of details in historical fiction. Activities involve filling in backstory to novels, analyzing character responses to challenges, attending to minor characters and missing perspectives, gaining new insights about themes by revisiting story endings, immersing themselves as students of historical eras, reading beyond the text to build background knowledge, distinguishing truth from fiction, analyzing power in conflict, making connections between the past and present, and studying legacies.</p>
+    <p>The designated book for this unit is The Devil&rsquo;s Arithmetic by Jane Yolen. In the narrative, during a Passover Seder, 12-year-old Hannah is transported back to 1942 Poland, experiencing the Holocaust horrors as a young Jewish girl named Chaya. Witnessing these atrocities firsthand, Hannah gains a profound understanding of the past and returns with a renewed commitment to remembering and combating hatred.</p>
+
+    <h3>Writing Workshop</h3>
+    <p>The writing unit revolves around crafting literary essays. Students will undertake the task of researching historical events connected to a book, comparing the past, present, and potential future. The primary goal is to comprehend the current state of society by delving into the past and leveraging book examples to express insightful observations.</p>
+    <p>Throughout this unit, students will delve into characters&rsquo; desires, extract significant ideas from character details, formulate claims, present evidence through storytelling, summarization, and quoting. They will study mentor texts, generate meaningful ideas, write with engagement and precision, troubleshoot common issues in evidence analysis, and undertake comparisons and contrasts of themes across texts.</p>
+  </div>
+
+  <!-- MATHEMATICS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-math">&#x1F522;</span> Mathematics</h2>
+
+    <h3>Module 2: Ratios and Proportional Relationships</h3>
+    <p>In this module, students learn to reason proportionally by comparing quantities using ratios, unit rates, conversions, and percents. Students move from concrete representations, such as tables and visual models, to more abstract reasoning using equations and proportional strategies. Real-world contexts help students understand how ratios and percents are used in everyday situations, such as shopping, recipes, and measurement.</p>
+
+    <div class="focus-box">
+      <h4>What Students Will Do</h4>
+      <ul>
+        <li>Describe and compare ratios using words, tables, and diagrams</li>
+        <li>Use ratio tables and unit rates to solve real-world problems</li>
+        <li>Convert measurements using tables and proportional reasoning</li>
+        <li>Solve percent problems involving part, whole, and percent</li>
+        <li>Explain their thinking using models, tables, and written reasoning</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h4>Topic 1: Ratios</h4>
+      <p>Students learn to understand ratios as comparisons between two quantities. They use words, tables, tape diagrams, and real-world examples to describe ratio relationships and compare different situations. (6.RP.1, 6.RP.3A)</p>
+    </div>
+
+    <div class="subsection">
+      <h4>Topic 2: Unit Rates and Conversions</h4>
+      <p>Students use unit rates to compare quantities and solve problems. They apply proportional reasoning to convert measurements, including metric conversions, using tables and real-world contexts. (6.RP.2, 6.RP.3B, 6.RP.3D)</p>
+    </div>
+
+    <div class="subsection">
+      <h4>Topic 3: Percents</h4>
+      <p>Students build an understanding of percents as ratios out of 100. They solve problems involving finding a percent of a quantity and determining the whole, part, or percent in real-life situations. (6.RP.3C)</p>
+    </div>
+
+    <div class="focus-box">
+      <h4>Resources</h4>
+      <ul>
+        <li>Carnegie Learning 1</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCIENCE -->
+  <div class="subject-card">
+    <h2><span class="icon icon-sci">&#x1F52C;</span> Science</h2>
+
+    <h3>Matter and Energy in Organisms and Ecosystems</h3>
+    <p>The Performance Expectations help students formulate answers to the questions: &ldquo;How do organisms obtain and use matter and energy? How do matter and energy move through an ecosystem?&rdquo; Middle school students can use conceptual and physical models to explain the transfer of energy and cycling of matter as they construct explanations for the role of photosynthesis in cycling matter in ecosystems.</p>
+    <p>They can construct explanations for the cycling of matter in organisms and the interactions of organisms to obtain the matter and energy from the ecosystem to survive and grow. Students have a grade-appropriate understanding and use of the practices of investigations, constructing arguments based on evidence, and oral and written communication. They understand that sustaining life requires substantial energy and matter inputs and the structure and functions of organisms contribute to the capture, transformation, transport, release, and elimination of matter and energy.</p>
+
+    <h3>Interdependent Relationships in Ecosystems</h3>
+    <p>The Performance Expectations help students formulate an answer to the question, &ldquo;How do organisms interact with other organisms in the physical environment to obtain matter and energy?&rdquo; To answer the question, middle school students construct explanations for the interactions in ecosystems and the scientific, economic, political, and social justifications used in making decisions about maintaining biodiversity in ecosystems.</p>
+    <p>Students can use models, construct evidence-based explanations, and use argumentation from evidence. Students understand that organisms and populations of organisms are dependent on their environmental interactions both with other organisms and with nonliving factors. They also understand the limits of resources influence the growth of organisms and populations, which may result in competition for those limited resources.</p>
+
+    <div class="focus-box">
+      <h4>Crosscutting Concepts</h4>
+      <ul>
+        <li><strong>Matter and energy:</strong> Tracking flows of matter and energy through ecosystems.</li>
+        <li><strong>Systems and system models:</strong> Understanding ecosystems as interconnected systems.</li>
+        <li><strong>Cause and effect:</strong> Analyzing how changes in ecosystems affect organisms and populations.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ESPA&Ntilde;OL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-esp">&#x1F1E8;&#x1F1F7;</span> Espa&ntilde;ol</h2>
+
+    <p>En este bimestre, la lectura se orienta a reconocer c&oacute;mo los personajes enfrentan conflictos y toman decisiones que transforman su historia. Con Verano de colores como texto central, los estudiantes fortalecer&aacute;n la comprensi&oacute;n de estructura narrativa, el an&aacute;lisis de tema e identidad, y la escritura argumentativa y reflexiva. Se integrar&aacute;n textos no literarios para ampliar perspectivas y sostener opiniones con razones y evidencia.</p>
+
+    <h3>Lectura (obra central)</h3>
+    <p>Se leer&aacute; Verano de colores para analizar desarrollo de personaje, conflicto y tema desde una narrativa cercana a experiencias juveniles. Se trabajar&aacute; la estructura (inicio&ndash;nudo&ndash;desenlace), puntos de giro y decisiones de los personajes.</p>
+
+    <h3>Escritura</h3>
+    <p>Producciones centradas en: resumen con estructura, an&aacute;lisis de personaje (rasgos, motivaciones, cambios), diario/entrada personal desde una voz narrativa y un texto argumentativo breve (opinar con razones y evidencia sobre decisiones del personaje).</p>
+
+    <h3>Lengua y estilo</h3>
+    <p>Profundizaci&oacute;n en cohesi&oacute;n: conectores temporales y l&oacute;gicos; uso de adjetivos y verbos precisos; vocabulario contextual (inferencias).</p>
+
+    <h3>Ortograf&iacute;a/convenciones</h3>
+    <p>Acentuaci&oacute;n (agudas, graves, esdr&uacute;julas; hiato si aplica), signos de interrogaci&oacute;n/exclamaci&oacute;n y correcci&oacute;n de errores frecuentes en borradores.</p>
+
+    <h3>Textos no literarios integrados</h3>
+    <p>Textos breves sobre identidad, convivencia, toma de decisiones, comunicaci&oacute;n asertiva y comparaci&oacute;n de perspectivas (entrevista corta, columna juvenil, gu&iacute;a pr&aacute;ctica).</p>
+
+    <h3>Oralidad</h3>
+    <p>C&iacute;rculos de conversaci&oacute;n sobre temas del libro + panel corto por equipos (posturas opuestas con evidencia).</p>
+
+    <div class="assessment-box">
+      <h4>Evaluaci&oacute;n (panorama)</h4>
+      <p>Comprobaciones sumativas de lectura, trabajos de an&aacute;lisis (formativos), una tarea escrita extendida (sumativa intermedia) y un producto final (proyecto o presentaci&oacute;n) con enfoque en personaje/tema.</p>
+    </div>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+    <div class="contact-block">
+      <h4>Student Support &mdash; Psychologist</h4>
+      <div class="name">Roberto Torres</div>
+      <a href="mailto:ss.secondary@truenorthcr.education">ss.secondary@truenorthcr.education</a>
+      <div class="phone">8857.4683</div>
+    </div>
+    <div class="contact-block">
+      <h4>Front Desk</h4>
+      <div class="name">Yesenia Cano</div>
+      <a href="mailto:yesenia@truenorthcr.education">yesenia@truenorthcr.education</a>
+      <div class="phone">4034.5824</div>
+    </div>
+  </div>
+
+  <div class="home-btn-wrap">
+    <a href="overview-q2.html" class="home-btn">&larr; Back to Overview</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 True North School. Escaz&uacute;, Costa Rica.</footer>
+
+</body>
+</html>

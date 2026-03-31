@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4th Grade | True North School Q2 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --purple: #4a3a6b; --purple-light: #6b5b8a; --purple-dark: #2d2243; --accent: #c4a63a; --accent-light: #f5efd4; --warm-bg: #faf8f5; --text: #2d2243; --text-light: #6b6580; --white: #ffffff; --border: #e8e4ef; --section-alt: #f3f0f8; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--warm-bg); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--purple); text-decoration: none; }
+    .nav-logo .q-badge { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700; background: var(--accent); color: var(--white); padding: 0.12rem 0.4rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+    .back-link { font-size: 0.82rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .back-link:hover { color: var(--purple); }
+    .hero { margin-top: 56px; background: linear-gradient(135deg, #3d3520 0%, #6b6030 40%, #8a7d3b 70%, var(--purple-dark) 100%); color: var(--white); padding: 3.5rem 2rem 3rem; text-align: center; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--purple); margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+    h2:first-of-type { margin-top: 0; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--purple-dark); margin: 1.25rem 0 0.4rem; }
+    h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin: 1rem 0 0.3rem; }
+    p { margin-bottom: 1rem; font-size: 0.92rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 1rem 1.25rem; font-size: 0.92rem; }
+    ul li { margin-bottom: 0.35rem; }
+    ul li::marker { color: var(--accent); }
+    .subject-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+    .subject-card h2 { margin-top: 0; border: none; padding-bottom: 0; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .subject-card h2 .icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
+    .icon-lal { background: #e0f0e8; } .icon-math { background: #fce4ec; } .icon-pbl { background: #fff3dc; } .icon-esp { background: #dceeff; }
+    .subsection { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0; }
+    .subsection h4 { margin-top: 0; }
+    .pbl-highlight { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.7; }
+    .pbl-highlight strong { color: var(--purple); }
+    .focus-box { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0 1rem; }
+    .focus-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .assessment-box { background: #f9f5ff; border: 1px solid #e8dff5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .assessment-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .contacts { background: var(--section-alt); border-radius: 10px; padding: 1.5rem 2rem; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .contact-block h4 { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
+    .contact-block .name { font-weight: 700; font-size: 0.92rem; }
+    .contact-block a { font-size: 0.82rem; color: var(--purple); text-decoration: none; display: block; margin-top: 0.15rem; }
+    .contact-block a:hover { text-decoration: underline; }
+    .contact-block .phone { font-size: 0.82rem; color: var(--text-light); margin-top: 0.1rem; }
+    .home-btn-wrap { text-align: center; margin-top: 2.5rem; }
+    .home-btn { display: inline-block; background: var(--purple); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.65rem 2rem; border-radius: 8px; transition: background 0.2s; }
+    .home-btn:hover { background: var(--purple-dark); }
+    footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.75rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+    @media (max-width: 600px) { .content { padding: 2rem 1.25rem; } .contacts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="overview-q2.html" class="nav-logo">True North School <span class="q-badge">Q2</span></a>
+    <a href="overview-q2.html" class="back-link">&larr; Back to Overview</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Lower Elementary &middot; Quarter II 2026</p>
+  <h1>4th Grade</h1>
+</header>
+
+<div class="content">
+
+  <!-- LANGUAGE ARTS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-lal">&#x1F4D6;</span> Language Arts</h2>
+
+    <h3>Reading Workshop</h3>
+    <p>This quarter, students will read The One and Only Ivan by Katherine Applegate as a class anchor text. Through this novel, they will deepen their skills in character study, learning to track how characters change over time, infer characters' motivations and feelings from their actions and dialogue, and develop theories about why characters behave the way they do.</p>
+    <p>Students will also work on making inferences across the text, using evidence to support their thinking. They will practice close reading strategies, paying attention to how authors use descriptive language, symbolism, and point of view to create meaning. Independent reading will continue alongside the class novel, with students applying the same character-analysis skills to their self-selected books.</p>
+
+    <h3>Writing Workshop</h3>
+    <p>In writing, students will move into research-based writing, learning to craft informational reports that are well-organized, clearly structured, and supported by evidence. They will learn how to gather information from multiple sources, take organized notes, and properly cite their references.</p>
+    <p>Students will focus on structuring their reports into well-developed chapters or sections, each with a clear focus. They will practice writing strong introductions and conclusions, using transition words to connect ideas, and integrating facts, definitions, and details to support their main points. Revision and editing will be emphasized throughout the process.</p>
+  </div>
+
+  <!-- MATHEMATICS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-math">&#x1F522;</span> Mathematics</h2>
+    <p>In the second quarter of 4th grade, Units 3 and 4 build on foundational skills with a focus on multiplication, division, multi-digit operations, and measurement.</p>
+
+    <div class="subsection">
+      <h4>Unit 3 &mdash; Multiplication &amp; Division</h4>
+      <p>Students will extend their multiplication skills to include 2- and 3-digit multiplication, building fluency with multi-digit problems. They will also tackle division, including problems with and without remainders, learning to interpret remainders in real-world contexts. This unit strengthens their understanding of the relationship between multiplication and division and builds the computational fluency needed for more complex problem solving.</p>
+    </div>
+
+    <div class="subsection">
+      <h4>Unit 4 &mdash; Addition, Subtraction &amp; Measurement</h4>
+      <p>This unit focuses on multi-digit addition and subtraction using standard algorithms, ensuring students can solve problems accurately and efficiently. Students will also explore measurement conversion, learning to convert between units of length, mass, and capacity within the same measurement system. Practical, real-world problems will help students see the relevance of these skills in everyday life.</p>
+    </div>
+
+    <p>Together, these units provide a rigorous mathematical experience, combining computational fluency with practical measurement applications.</p>
+  </div>
+
+  <!-- PBL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-pbl">&#x1F3A8;</span> Project-Based Learning</h2>
+
+    <div class="pbl-highlight">
+      <strong>&ldquo;Enlightened Tours In Costa Rica&rdquo;</strong> &mdash; This quarter, students will explore the fascinating world of nocturnal animals, animal senses, light and survival, and how night tourism and eco-tourism intersect in Costa Rica. They will investigate how animals have adapted to life in the dark and how humans can responsibly experience these wonders.
+    </div>
+
+    <p><strong>Driving Question:</strong> How can we design engaging and responsible night tour experiences that showcase Costa Rica&rsquo;s nocturnal wildlife while promoting conservation and sustainable tourism?</p>
+
+    <div class="focus-box">
+      <h4>Science Focus: Animal Senses &amp; Light</h4>
+      <p>Students will investigate how nocturnal animals use specialized senses to navigate, hunt, and survive in darkness. They will explore the science of light, how different animals perceive it, and how light pollution affects wildlife behavior and habitats.</p>
+    </div>
+
+    <div class="focus-box">
+      <h4>Social Studies Focus: Tourism, Environment &amp; Responsibility</h4>
+      <p>Students will examine Costa Rica&rsquo;s eco-tourism industry, exploring how tourism impacts both the economy and the environment. They will investigate what makes tourism sustainable and responsible, and how communities can balance economic opportunity with environmental protection.</p>
+    </div>
+
+    <div class="focus-box">
+      <h4>PBL Skills Focus</h4>
+      <ul>
+        <li><strong>Inquiry:</strong> Formulating questions, conducting research, and synthesizing findings about nocturnal ecosystems.</li>
+        <li><strong>Collaboration:</strong> Working in teams to plan, design, and present tour experiences.</li>
+        <li><strong>Communication:</strong> Presenting research and proposals clearly to authentic audiences.</li>
+      </ul>
+    </div>
+
+    <div class="assessment-box">
+      <h4>Assessment</h4>
+      <ul>
+        <li><strong>Science Models:</strong> Students will create models demonstrating how nocturnal animals use their senses and how light affects wildlife behavior.</li>
+        <li><strong>Social Studies Research:</strong> Students will research and analyze the impact of tourism on Costa Rica&rsquo;s ecosystems, presenting their findings with supporting evidence.</li>
+        <li><strong>Integrated Final Products:</strong> Students will design night tour stations, create wildlife guides, and develop sustainable tourism proposals that combine their science and social studies learning.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ESPA&Ntilde;OL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-esp">&#x1F1E8;&#x1F1F7;</span> Espa&ntilde;ol</h2>
+
+    <p><strong>Lectura:</strong> &ldquo;La mujer que sab&iacute;a todos los cuentos&rdquo;</p>
+    <p>Este bimestre, los estudiantes explorar&aacute;n este texto que se adentra en la tradici&oacute;n oral, el papel de las mujeres en la preservaci&oacute;n de historias y la riqueza de la historia latinoamericana. A trav&eacute;s de la lectura, los estudiantes analizar&aacute;n temas de identidad cultural, roles de g&eacute;nero a lo largo del tiempo y la importancia de la narraci&oacute;n oral como patrimonio cultural.</p>
+
+    <h3>Escritura</h3>
+    <p>Los estudiantes se enfocar&aacute;n en la producci&oacute;n de textos descriptivos, utilizando adjetivos, met&aacute;foras y lenguaje sensorial para crear descripciones vivas y detalladas de personajes, escenarios y situaciones. Practicar&aacute;n la elaboraci&oacute;n de p&aacute;rrafos bien estructurados con ideas claras y conectores apropiados.</p>
+
+    <h3>Gram&aacute;tica</h3>
+    <p>El enfoque gramatical incluir&aacute; la concordancia de g&eacute;nero y n&uacute;mero, el uso correcto de adjetivos calificativos, adverbios y pronombres. Los estudiantes aplicar&aacute;n estas reglas gramaticales tanto en sus escritos como en su comunicaci&oacute;n oral.</p>
+
+    <h3>Ortograf&iacute;a</h3>
+    <p>Los estudiantes trabajar&aacute;n en el uso correcto de la h, la g y la j, s&iacute;labas complejas y reglas de acentuaci&oacute;n. Mediante ejercicios pr&aacute;cticos y dictados, reforzar&aacute;n su precisi&oacute;n ortogr&aacute;fica.</p>
+
+    <h3>Producci&oacute;n Oral</h3>
+    <p>Los estudiantes desarrollar&aacute;n habilidades de expresi&oacute;n oral a trav&eacute;s de descripciones orales de personajes y escenarios. Practicar&aacute;n la presentaci&oacute;n clara y fluida de sus ideas, utilizando vocabulario descriptivo y estructuras gramaticales apropiadas para comunicar sus observaciones y an&aacute;lisis.</p>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+    <div class="contact-block">
+      <h4>Student Support Coordinator</h4>
+      <div class="name">Paz Olgu&iacute;n</div>
+      <a href="mailto:paz@truenorthcr.education">paz@truenorthcr.education</a>
+      <div class="phone">8863.4298</div>
+    </div>
+    <div class="contact-block">
+      <h4>Front Desk</h4>
+      <div class="name">Krissia Mu&ntilde;oz</div>
+      <a href="mailto:krissia@truenorthcr.education">krissia@truenorthcr.education</a>
+      <div class="phone">4033.4515</div>
+    </div>
+  </div>
+
+  <div class="home-btn-wrap">
+    <a href="overview-q2.html" class="home-btn">&larr; Back to Overview</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 True North School. Escaz&uacute;, Costa Rica.</footer>
+
+</body>
+</html>

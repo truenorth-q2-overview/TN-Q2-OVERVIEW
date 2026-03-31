@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PreK — Scouts | True North School Q2 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #4a3a6b;
+      --purple-light: #6b5b8a;
+      --purple-dark: #2d2243;
+      --accent: #c4a63a;
+      --accent-light: #f5efd4;
+      --warm-bg: #faf8f5;
+      --text: #2d2243;
+      --text-light: #6b6580;
+      --white: #ffffff;
+      --border: #e8e4ef;
+      --section-alt: #f3f0f8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--warm-bg);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--purple);
+      text-decoration: none;
+    }
+    .nav-logo .q-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem; font-weight: 700;
+      background: var(--accent); color: var(--white);
+      padding: 0.12rem 0.4rem; border-radius: 4px;
+      margin-left: 0.4rem; vertical-align: middle;
+      letter-spacing: 0.05em;
+    }
+    .back-link {
+      font-size: 0.82rem; color: var(--text-light);
+      text-decoration: none; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--purple); }
+
+    .hero {
+      margin-top: 56px;
+      background: linear-gradient(135deg, #3d3520 0%, #6b6030 40%, #8a7d3b 70%, var(--purple-dark) 100%);
+      color: var(--white);
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      opacity: 0.7; margin-bottom: 0.5rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700; margin-bottom: 0.25rem;
+    }
+    .hero .nickname {
+      font-size: 1.05rem; font-weight: 500; opacity: 0.8; font-style: italic;
+    }
+
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+
+    .intro-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem; line-height: 1.75;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; color: var(--purple);
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--border);
+    }
+    h2:first-of-type { margin-top: 0; }
+
+    h3 {
+      font-size: 1rem; font-weight: 700; color: var(--purple-dark);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    p { margin-bottom: 1rem; font-size: 0.92rem; }
+    p:last-child { margin-bottom: 0; }
+
+    ul { margin: 0.5rem 0 1rem 1.25rem; font-size: 0.92rem; }
+    ul li { margin-bottom: 0.4rem; }
+    ul li::marker { color: var(--accent); }
+
+    .table-wrapper {
+      overflow-x: auto; margin: 1.5rem 0 2rem;
+      border-radius: 8px; border: 1px solid var(--border);
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px; }
+    thead { background: var(--purple); color: var(--white); }
+    th { padding: 0.75rem 1rem; font-weight: 600; text-align: center; font-size: 0.8rem; letter-spacing: 0.03em; }
+    td { padding: 0.65rem 1rem; text-align: center; border-top: 1px solid var(--border); }
+    tbody tr:nth-child(even) { background: var(--section-alt); }
+    td:first-child { font-weight: 700; color: var(--purple); text-align: left; }
+    .check { color: var(--accent); font-size: 1.1rem; font-weight: 700; }
+    .note { font-size: 0.75rem; color: var(--text-light); font-style: italic; }
+
+    .dev-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .dev-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+    }
+    .dev-card h3 {
+      margin-top: 0; font-size: 0.95rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .dev-card h3 .icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .dev-card p, .dev-card ul { font-size: 0.87rem; }
+    .dev-card ul { margin-left: 1rem; }
+    .icon-social { background: #f0e6ff; }
+    .icon-care { background: #ffe8de; }
+    .icon-lang { background: #e0f0e8; }
+    .icon-motor { background: #dceeff; }
+    .icon-cog { background: #fff3dc; }
+    .icon-math { background: #fce4ec; }
+
+    .contacts {
+      background: var(--section-alt); border-radius: 10px;
+      padding: 1.5rem 2rem; margin-top: 2.5rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .contact-block h4 {
+      font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--accent); margin-bottom: 0.4rem;
+    }
+    .contact-block .name { font-weight: 700; font-size: 0.92rem; }
+    .contact-block a {
+      font-size: 0.82rem; color: var(--purple); text-decoration: none;
+      display: block; margin-top: 0.15rem;
+    }
+    .contact-block a:hover { text-decoration: underline; }
+    .contact-block .phone { font-size: 0.82rem; color: var(--text-light); margin-top: 0.1rem; }
+
+    .home-btn-wrap { text-align: center; margin-top: 2.5rem; }
+    .home-btn {
+      display: inline-block; background: var(--purple); color: var(--white);
+      text-decoration: none; font-size: 0.85rem; font-weight: 600;
+      padding: 0.65rem 2rem; border-radius: 8px; transition: background 0.2s;
+    }
+    .home-btn:hover { background: var(--purple-dark); }
+
+    footer {
+      text-align: center; padding: 1.5rem 2rem;
+      font-size: 0.75rem; color: var(--text-light);
+      border-top: 1px solid var(--border); margin-top: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      .content { padding: 2rem 1.25rem; }
+      .dev-grid { grid-template-columns: 1fr; }
+      .contacts { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="overview-q2.html" class="nav-logo">True North School <span class="q-badge">Q2</span></a>
+    <a href="overview-q2.html" class="back-link">&larr; Back to Overview</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Preschool &middot; Quarter II 2026</p>
+  <h1>PreK</h1>
+  <p class="nickname">&ldquo;The Scouts&rdquo;</p>
+</header>
+
+<div class="content">
+
+  <div class="intro-box">
+    Welcome to the "Scouts" group at Let's Play by True North. The Scouts are our vibrant 3-year-olds, turning 4 during the year. This is an exciting time of growth, as the Scouts develop their curiosity, independence, and social skills. It's a year filled with exploration and discovery, where play becomes a tool for learning and building lasting friendships. Together, we'll embark on a journey of fun and growth!
+  </div>
+
+  <h2>How Do We Learn Throughout the Year?</h2>
+  <p>True North offers a playful preschool program. As teachers, we encourage student interactions and facilitate social and emotional learning throughout the day. Children guide the play processes and choose the activities they engage in based on their current interests. We support the playful environments by offering experiences centered around math and language foundational skills that will allow for cognitive development.</p>
+
+  <h2>How and When Are Parents Informed About Growth?</h2>
+  <ul>
+    <li><strong>Developmental Milestones Report Card (DMR):</strong> Based on the True North curriculum for early ages and developmental expectations, teachers will identify and collect evidence of growth and report it in the Developmental Milestones Report (DMR). This growth is observed in daily interactions, exploration time and playful experiences. Sent home at the end of every quarter via e-mail.</li>
+    <li><strong>Student Portfolio:</strong> Twice a year parents will receive a digital portfolio with pictures and videos of each child reflecting their growth along overall standards.</li>
+    <li><strong>Parent-Teacher Conferences:</strong> Concluding each semester, teachers will meet with all families.</li>
+    <li><strong>Show My Learning:</strong> A presentation designed to provide an opportunity to connect school and family and showcase how children experience preschool life.</li>
+  </ul>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>DMR<br><span style="font-weight:400;font-size:0.72rem;opacity:0.85">(Shared via E-mail)</span></th>
+          <th>Show My Learning</th>
+          <th>Portfolios<br><span style="font-weight:400;font-size:0.72rem;opacity:0.85">(Digital)</span></th>
+          <th>Parent-Teacher Conferences</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1Q</td>
+          <td><span class="check">&#x2713;</span></td>
+          <td><span class="check">&#x2713;</span></td>
+          <td></td>
+          <td><span class="note">If requested by parents or teachers</span></td>
+        </tr>
+        <tr>
+          <td>2Q</td>
+          <td><span class="check">&#x2713;</span></td>
+          <td></td>
+          <td><span class="check">&#x2713;</span></td>
+          <td><span class="check">&#x2713;</span></td>
+        </tr>
+        <tr>
+          <td>3Q</td>
+          <td><span class="check">&#x2713;</span></td>
+          <td><span class="check">&#x2713;</span></td>
+          <td></td>
+          <td><span class="note">If requested by parents or teachers</span></td>
+        </tr>
+        <tr>
+          <td>4Q</td>
+          <td><span class="check">&#x2713;</span></td>
+          <td></td>
+          <td><span class="check">&#x2713;</span></td>
+          <td><span class="check">&#x2713;</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Awaken Your True North Program</h2>
+  <p>Our <strong>Awaken Your True North</strong> program positions the development of a series of essential skills for life and leadership (core skills) as the backbone of our educational model, transforming the school experience into an awakening of conscience and therefore contributing to students' well-being and success in their lives as agents of change in society.</p>
+  <p>Our core skills are: self-care, appreciation, audacity, commitment, curiosity, empathy, and neutrality. Throughout the day our program enriches students' day with different practices.</p>
+
+  <h2>Areas of Development</h2>
+
+  <div class="dev-grid">
+    <div class="dev-card">
+      <h3><span class="icon icon-social">&#x1F49C;</span> Social &amp; Emotional Learning</h3>
+      <p>Social-emotional development is the foundation upon which much other learning takes place. This is the reason why it takes so much value in our Early Childhood program. Guiding children to develop skills that foster strong relationships, enhance emotional awareness, and enable them to recognize, understand, and appropriately express their feelings is of utmost importance.</p>
+      <p>Using the Conscious Discipline approach, we support toddlers and preschoolers in exploring their emotions, using their "Big Voice" to assert themselves and resolve social conflicts, and learning strategies to maintain composure.</p>
+    </div>
+
+    <div class="dev-card">
+      <h3><span class="icon icon-care">&#x1F331;</span> Care of Self</h3>
+      <p>During this school year, the Scouts will develop and refine essential self-care skills, such as putting on their shoes, eating independently, and managing bathroom routines. Each child progresses at their own pace, and these daily tasks play a vital role in fostering their independence.</p>
+    </div>
+
+    <div class="dev-card">
+      <h3><span class="icon icon-lang">&#x1F4AC;</span> Language Development</h3>
+      <p>Children at this age are continuously learning and developing their language skills. Our Early Childhood program is designed to support the growth of their first language (Spanish, if applicable) while progressively immersing them in an English-speaking environment. Our primary language development goals are to:</p>
+      <ul>
+        <li>Support language expression and comprehension</li>
+        <li>Encourage understanding and repetition of English commands, progressing toward full sentences</li>
+        <li>Foster the ability to retell stories from books they read</li>
+        <li>Cultivate enjoyment of stories by asking questions and connecting them to personal experiences</li>
+        <li>Engage in playful exploration of sounds through rhymes and songs in English</li>
+        <li>Recognize their written name</li>
+      </ul>
+    </div>
+
+    <div class="dev-card">
+      <h3><span class="icon icon-motor">&#x1F3C3;</span> Motor Development</h3>
+      <ul>
+        <li><strong>Spatial Relationships:</strong> Children deepen their understanding of spatial concepts, like up and down, in and out, and near and far.</li>
+        <li><strong>Fine Motor:</strong> Children enhance the small, coordinated movements of their hands and fingers, which are essential for tasks like grasping objects, manipulating tools, and engaging in precise activities. Outdoor play is a key component.</li>
+        <li><strong>Gross Motor:</strong> Children strengthen their ability to control and coordinate large muscle groups, exhibiting balance, allowing for essential physical activities such as walking, running, jumping and climbing.</li>
+      </ul>
+    </div>
+
+    <div class="dev-card">
+      <h3><span class="icon icon-cog">&#x1F9E0;</span> Cognitive Development</h3>
+      <p>Children explore and engage with the world around them, using imaginative play to express ideas and experiment with new concepts. They recall and connect personal experiences, showing curiosity through exploration and problem-solving during play. These experiences support their growing attention span and ability to make meaningful connections.</p>
+    </div>
+
+    <div class="dev-card">
+      <h3><span class="icon icon-math">&#x1F522;</span> Mathematical Reasoning Foundations</h3>
+      <p>The Scouts experience math in context. Our objective is to create age-appropriate play experiences and guide their mathematical reasoning that give them the vocabulary to describe what they're noticing related to numbers, quantities, measurement, geometry and patterns. The main skills they develop at this age are:</p>
+      <ul>
+        <li>Beginning building number sense: the child's ability to understand quantities, numbers and their relationships</li>
+        <li>Practice counting to 10</li>
+        <li>Match set and numerals to 5</li>
+        <li>Explore written number symbols</li>
+        <li>Play with shapes and look for patterns</li>
+        <li>Recognize basic shapes (circle, square, triangle)</li>
+        <li>Sort objects by size, color, shape</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="contacts">
+    <div class="contact-block">
+      <h4>Preschool Coordinator</h4>
+      <div class="name">Paola Esquivel</div>
+      <a href="mailto:paola@truenorthcr.education">paola@truenorthcr.education</a>
+      <div class="phone">8884.7568</div>
+    </div>
+    <div class="contact-block">
+      <h4>Extended Care &amp; Let&rsquo;s Play Front Desk</h4>
+      <div class="name">Melissa Carvajal</div>
+      <a href="mailto:melissa.c@truenorthcr.education">melissa.c@truenorthcr.education</a>
+      <div class="phone">4031.1409</div>
+    </div>
+  </div>
+
+  <div class="home-btn-wrap">
+    <a href="overview-q2.html" class="home-btn">&larr; Back to Overview</a>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 True North School. Escaz&uacute;, Costa Rica.
+</footer>
+
+</body>
+</html>

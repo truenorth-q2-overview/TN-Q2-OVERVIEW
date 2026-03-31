@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10th Grade | True North School Q2 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --purple: #4a3a6b; --purple-light: #6b5b8a; --purple-dark: #2d2243; --accent: #c4a63a; --accent-light: #f5efd4; --warm-bg: #faf8f5; --text: #2d2243; --text-light: #6b6580; --white: #ffffff; --border: #e8e4ef; --section-alt: #f3f0f8; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--warm-bg); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--purple); text-decoration: none; }
+    .nav-logo .q-badge { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700; background: var(--accent); color: var(--white); padding: 0.12rem 0.4rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+    .back-link { font-size: 0.82rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .back-link:hover { color: var(--purple); }
+    .hero { margin-top: 56px; background: linear-gradient(135deg, #3d3520 0%, #6b6030 40%, #8a7d3b 70%, var(--purple-dark) 100%); color: var(--white); padding: 3.5rem 2rem 3rem; text-align: center; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--purple); margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+    h2:first-of-type { margin-top: 0; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--purple-dark); margin: 1.25rem 0 0.4rem; }
+    h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin: 1rem 0 0.3rem; }
+    p { margin-bottom: 1rem; font-size: 0.92rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 1rem 1.25rem; font-size: 0.92rem; }
+    ul li { margin-bottom: 0.35rem; }
+    ul li::marker { color: var(--accent); }
+    .subject-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+    .subject-card h2 { margin-top: 0; border: none; padding-bottom: 0; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .subject-card h2 .icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
+    .icon-lal { background: #e0f0e8; } .icon-math { background: #fce4ec; } .icon-ucr { background: #f0e8f5; } .icon-chem { background: #fff3dc; } .icon-hist { background: #e8e0f0; } .icon-esp { background: #dceeff; }
+    .subsection { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0; }
+    .subsection h4 { margin-top: 0; }
+    .focus-box { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0 1rem; }
+    .focus-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .assessment-box { background: #f9f5ff; border: 1px solid #e8dff5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .assessment-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .contacts { background: var(--section-alt); border-radius: 10px; padding: 1.5rem 2rem; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .contact-block h4 { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
+    .contact-block .name { font-weight: 700; font-size: 0.92rem; }
+    .contact-block a { font-size: 0.82rem; color: var(--purple); text-decoration: none; display: block; margin-top: 0.15rem; }
+    .contact-block a:hover { text-decoration: underline; }
+    .contact-block .phone { font-size: 0.82rem; color: var(--text-light); margin-top: 0.1rem; }
+    .home-btn-wrap { text-align: center; margin-top: 2.5rem; }
+    .home-btn { display: inline-block; background: var(--purple); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.65rem 2rem; border-radius: 8px; transition: background 0.2s; }
+    .home-btn:hover { background: var(--purple-dark); }
+    footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.75rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+    @media (max-width: 600px) { .content { padding: 2rem 1.25rem; } .contacts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="overview-q2.html" class="nav-logo">True North School <span class="q-badge">Q2</span></a>
+    <a href="overview-q2.html" class="back-link">&larr; Back to Overview</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">High School &middot; Quarter II 2026</p>
+  <h1>10th Grade</h1>
+</header>
+
+<div class="content">
+
+  <!-- LANGUAGE ARTS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-lal">&#x1F4D6;</span> Language Arts</h2>
+
+    <h3>Identity and Perspective: A Multi-Genre Workshop</h3>
+    <p>This 10-week unit explores identity and perspective through a mixed-genre approach, examining how writers use different forms: poetry, memoir, personal essays, and graphic narratives to tell their stories and shape their identities. Students develop both analytical and creative writing skills through a workshop model that emphasizes process over product. Each two-week cycle focuses on a different genre, allowing students to read critically, write authentically, and revise thoughtfully.</p>
+    <p>A major component of this unit is systematic grammar instruction integrated into daily warm-ups, addressing critical skill gaps identified in diagnostic assessments. Students master apostrophes, dialogue punctuation, complex sentences, and precise verb usage through application in their own writing.</p>
+    <p>The unit culminates in a portfolio where students select, deeply revise, and present their strongest piece, accompanied by a reflective letter on their growth as writers and thinkers.</p>
+  </div>
+
+  <!-- MATHEMATICS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-math">&#x1F522;</span> Mathematics</h2>
+
+    <h3>Unit: Maximizing and Minimizing</h3>
+    <p>In this quarter, students explore the structure of quadratic functions through four real-world situations. They learn key characteristics of quadratic functions through explorations with their graphs and equations: intercepts, absolute maximum/minimum, vertex, axis of symmetry, domain, range, and intervals of increasing and decreasing. Students transform functions using function transformation form y = A &bull; f(B(x &minus; C)) + D and learn how coordinates are affected.</p>
+
+    <div class="focus-box">
+      <h4>Key Concepts</h4>
+      <ul>
+        <li>Parabola and vertical motion</li>
+        <li>Roots and second differences</li>
+        <li>Concave up and concave down</li>
+        <li>General form and factored form of a quadratic function</li>
+        <li>Vertex of a parabola and axis of symmetry</li>
+        <li>Monomial, binomial, and trinomial</li>
+        <li>Closure and difference of two squares</li>
+        <li>Perfect square trinomial</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Essential Ideas</h4>
+      <ul>
+        <li>A parabola is a smooth curve with reflectional symmetry, having an absolute maximum or minimum point and intervals of increase and decrease.</li>
+        <li>A parabola has one y-intercept and at most two x-intercepts.</li>
+        <li>The vertex lies on the axis of symmetry; you can determine it using x = r1 + r2 from factored form or x = &minus;b &divide; 2a from general form.</li>
+        <li>A function written in equivalent forms can reveal different characteristics of the function it defines.</li>
+        <li>The average rate of change of an increasing exponential function will eventually exceed that of increasing linear and quadratic functions.</li>
+        <li>The algorithms to add, subtract, and multiply polynomials are extensions of combining like terms and applying the Distributive Property.</li>
+        <li>Polynomials are closed under addition, subtraction, and multiplication.</li>
+        <li>The difference of two squares and perfect square trinomials are special products when multiplying binomials.</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Academic Content</h4>
+      <ul>
+        <li>Exploring Quadratic Functions</li>
+        <li>Key Characteristics of Quadratic Functions</li>
+        <li>Transformations of Quadratic Functions</li>
+        <li>Comparing Functions Using Key Characteristics and Average Rate of Change</li>
+        <li>Adding, Subtracting, and Multiplying Polynomials</li>
+        <li>Representing Solutions to Quadratic Equations</li>
+        <li>Solutions to Quadratic Equations in Vertex Form</li>
+        <li>Factoring and Completing the Square</li>
+        <li>The Quadratic Formula</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Resources</h4>
+      <ul>
+        <li>Carnegie Learning &Aacute;lgebra I</li>
+        <li>Mathia Software</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MATEM - UCR -->
+  <div class="subject-card">
+    <h2><span class="icon icon-ucr">&#x1F4CA;</span> MATEM &mdash; UCR</h2>
+
+    <h3>Unidad: Profundizaci&oacute;n en Funciones</h3>
+    <p>En este parcial, los estudiantes exploran la representaci&oacute;n gr&aacute;fica de funciones y ecuaciones, profundizando en las propiedades y el comportamiento de funciones lineales, cuadr&aacute;ticas, exponenciales y logar&iacute;tmicas. Tambi&eacute;n trabajan en sistemas de ecuaciones lineales y desigualdades, aprendiendo a resolverlos algebraica y gr&aacute;ficamente. Este periodo se enfoca en la conexi&oacute;n entre las representaciones algebraicas y gr&aacute;ficas.</p>
+
+    <div class="focus-box">
+      <h4>Conceptos clave</h4>
+      <ul>
+        <li>Funci&oacute;n lineal, cuadr&aacute;tica, exponencial y logar&iacute;tmica</li>
+        <li>Intersecci&oacute;n y pendiente</li>
+        <li>Sistema de ecuaciones e inecuaciones</li>
+        <li>Dominio y rango</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Ideas esenciales</h4>
+      <ul>
+        <li>Representar gr&aacute;ficamente funciones lineales, cuadr&aacute;ticas, exponenciales y logar&iacute;tmicas.</li>
+        <li>Comprender c&oacute;mo los cambios en los par&aacute;metros afectan el gr&aacute;fico de una funci&oacute;n.</li>
+        <li>Resolver sistemas de ecuaciones lineales utilizando m&eacute;todos algebraicos y gr&aacute;ficos.</li>
+        <li>Interpretar la soluci&oacute;n de un sistema como el punto de intersecci&oacute;n de dos funciones.</li>
+        <li>Comprender la relaci&oacute;n entre el dominio y rango de una funci&oacute;n y su representaci&oacute;n gr&aacute;fica.</li>
+        <li>Identificar intervalos donde una funci&oacute;n es creciente, decreciente o constante.</li>
+        <li>Resolver inecuaciones algebraica y gr&aacute;ficamente.</li>
+        <li>Analizar c&oacute;mo las traslaciones y reflexiones afectan la gr&aacute;fica de una funci&oacute;n.</li>
+        <li>Utilizar herramientas tecnol&oacute;gicas para analizar funciones y resolver problemas.</li>
+        <li>Aplicar estos conceptos para modelar situaciones de la vida real.</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Contenidos</h4>
+      <ul>
+        <li>Representaci&oacute;n gr&aacute;fica de funciones lineales, cuadr&aacute;ticas, exponenciales y logar&iacute;tmicas.</li>
+        <li>Resoluci&oacute;n de sistemas de ecuaciones lineales.</li>
+        <li>Resoluci&oacute;n de inecuaciones.</li>
+        <li>Dominio, rango y comportamiento de funciones.</li>
+        <li>Transformaciones gr&aacute;ficas.</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Recursos</h4>
+      <ul>
+        <li>Libro Prec&aacute;lculo MA-125 UCR</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHEMISTRY -->
+  <div class="subject-card">
+    <h2><span class="icon icon-chem">&#x1F9EA;</span> Chemistry</h2>
+
+    <h3>Structure and Properties of Matter</h3>
+    <p>The performance expectations in this topic help students formulate an answer to the question, &ldquo;How can one explain the structure and properties of matter?&rdquo; Two sub-ideas from the NRC Framework are addressed: the structure and properties of matter, and nuclear processes. Students are expected to develop an understanding of the substructure of atoms and provide more mechanistic explanations of the properties of substances.</p>
+    <p>Students are able to use the periodic table as a tool to explain and predict the properties of elements. Phenomena involving nuclei are also important to understand, as they explain the formation and abundance of the elements, radioactivity, the release of energy from the sun and other stars, and the generation of nuclear power. The crosscutting concepts of patterns, energy and matter, and structure and function are called out as organizing concepts.</p>
+
+    <h3>Chemical Reactions</h3>
+    <p>The performance expectations help students formulate an answer to the questions: &ldquo;How do substances combine or change (react) to make new substances? How does one characterize and explain these reactions and make predictions about them?&rdquo;</p>
+    <p>Chemical reactions, including rates of reactions and energy changes, can be understood at this level in terms of the collisions of molecules and the rearrangements of atoms. Using this expanded knowledge of chemical reactions, students are able to explain important biological and geophysical phenomena. Students are also able to apply an understanding of the process of optimization in engineering design to chemical reaction systems. The crosscutting concepts of patterns, energy and matter, and stability and change are called out as organizing concepts.</p>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="subject-card">
+    <h2><span class="icon icon-hist">&#x1F30D;</span> History</h2>
+
+    <h3>Imperialism in Africa and Asia</h3>
+    <p>In this quarter, students will examine the complex forces and consequences of imperialism in Africa and Asia, with a focus on the Scramble for Africa and the case studies of China and India. They will explore the political, economic, and cultural motivations behind imperial expansion, as well as the resistance and adaptations of colonized societies.</p>
+    <p>Through critical analysis, students will investigate the long-lasting impacts of imperialism, including the reshaping of borders, economies, and global relationships. Building on their historical reading and analysis skills, students will engage with primary and secondary sources to deepen their understanding of these topics.</p>
+    <p>They will also develop research skills, learning to gather, evaluate, and synthesize information from diverse sources to support their analyses. Emphasis will be placed on crafting well-sustained argumentative writing, enabling students to articulate nuanced perspectives on the consequences of imperialism.</p>
+  </div>
+
+  <!-- ESPA&Ntilde;OL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-esp">&#x1F1E8;&#x1F1F7;</span> Espa&ntilde;ol</h2>
+
+    <p>En este bimestre, la lectura se orienta a consolidar el an&aacute;lisis narrativo a partir de una obra de no ficci&oacute;n literaria de alta carga social y contempor&aacute;nea. Con Aqu&iacute; no es Miami como texto central, los estudiantes fortalecer&aacute;n la comprensi&oacute;n inferencial y la interpretaci&oacute;n del subtexto en contextos reales: lo que el texto revela sobre el narcotr&aacute;fico, el poder y la violencia a trav&eacute;s de testimonios, escenas y decisiones narrativas. La unidad prioriza la lectura con evidencia, la escritura anal&iacute;tica breve sostenida y la comparaci&oacute;n entre relatos para construir tesis defendibles, conectando literatura latinoamericana con problem&aacute;ticas sociales actuales.</p>
+
+    <h3>Lectura (obra central)</h3>
+    <p>Se leer&aacute; Aqu&iacute; no es Miami para analizar la construcci&oacute;n de relatos basados en hechos reales, la voz narrativa, el uso del detalle y la representaci&oacute;n del poder en contextos de narcotr&aacute;fico. Se enfatizar&aacute; c&oacute;mo la autora construye significado a partir de escenas, silencios y selecci&oacute;n de informaci&oacute;n, as&iacute; como la tensi&oacute;n entre lo narrado y lo sugerido. El foco estar&aacute; en distinguir entre lo expl&iacute;cito y lo impl&iacute;cito, interpretando c&oacute;mo se construye la figura del poder (econ&oacute;mico, social, violento) mediante decisiones narrativas, con evidencia textual.</p>
+
+    <h3>Escritura</h3>
+    <p>Producciones centradas en comentarios breves por relato (claim + evidencia + commentary), respuestas interpretativas y comparaciones entre textos o casos (tema/t&eacute;cnica/efecto). Se trabajar&aacute; la construcci&oacute;n de tesis comparativas y la incorporaci&oacute;n de contraargumentos breves. El bimestre culmina con un ensayo comparativo (400&ndash;600 palabras) que sostenga una interpretaci&oacute;n sobre c&oacute;mo el texto representa el poder y sus efectos sociales, utilizando evidencia de la obra y un referente contempor&aacute;neo.</p>
+
+    <h3>Lengua y estilo</h3>
+    <p>Cohesi&oacute;n en an&aacute;lisis breve: uso de conectores de contraste, concesi&oacute;n y causa; verbos de an&aacute;lisis (construye, evidencia, sugiere, expone, problematiza); precisi&oacute;n l&eacute;xica para describir poder, violencia, representaci&oacute;n y contexto social; control del registro acad&eacute;mico en escritura comparativa.</p>
+
+    <h3>Ortograf&iacute;a / convenciones</h3>
+    <p>Acentuaci&oacute;n sistem&aacute;tica, uso de comillas para evidencia textual, puntuaci&oacute;n para claridad y ritmo en textos anal&iacute;ticos. Revisi&oacute;n guiada de errores frecuentes mediante checklist (coherencia, evidencia, claridad).</p>
+
+    <h3>Textos no literarios integrados</h3>
+    <p>Textos breves sobre narcocultura, representaci&oacute;n del narcotr&aacute;fico y construcci&oacute;n medi&aacute;tica del poder; art&iacute;culos period&iacute;sticos y cr&oacute;nicas para contrastar perspectivas; fragmentos informativos sobre desigualdad, violencia y contexto latinoamericano para enriquecer el an&aacute;lisis.</p>
+
+    <h3>Oralidad</h3>
+    <p>Conversaciones guiadas a partir de los relatos (preguntas inferenciales y cr&iacute;ticas) y presentaciones breves donde los estudiantes explican c&oacute;mo se construye el poder en un caso espec&iacute;fico. Discusi&oacute;n con evidencia obligatoria (cita o referencia textual).</p>
+
+    <div class="assessment-box">
+      <h4>Evaluaci&oacute;n</h4>
+      <p>Comprobaci&oacute;n sumativa de lectura (selecci&oacute;n de relatos), tareas formativas de an&aacute;lisis (bit&aacute;coras, comentarios cronometrados), tarea escrita extendida (sumativa intermedia) y producto final comparativo centrado en representaci&oacute;n del poder + ensayo final tipo comparativo.</p>
+    </div>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+    <div class="contact-block">
+      <h4>Student Support &mdash; Psychologist</h4>
+      <div class="name">Roberto Torres</div>
+      <a href="mailto:ss.secondary@truenorthcr.education">ss.secondary@truenorthcr.education</a>
+      <div class="phone">8857.4683</div>
+    </div>
+    <div class="contact-block">
+      <h4>Front Desk</h4>
+      <div class="name">Yesenia Cano</div>
+      <a href="mailto:yesenia@truenorthcr.education">yesenia@truenorthcr.education</a>
+      <div class="phone">4034.5824</div>
+    </div>
+  </div>
+
+  <div class="home-btn-wrap">
+    <a href="overview-q2.html" class="home-btn">&larr; Back to Overview</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 True North School. Escaz&uacute;, Costa Rica.</footer>
+
+</body>
+</html>

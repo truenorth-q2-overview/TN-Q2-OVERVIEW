@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5th Grade | True North School Q2 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --purple: #4a3a6b; --purple-light: #6b5b8a; --purple-dark: #2d2243; --accent: #c4a63a; --accent-light: #f5efd4; --warm-bg: #faf8f5; --text: #2d2243; --text-light: #6b6580; --white: #ffffff; --border: #e8e4ef; --section-alt: #f3f0f8; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--warm-bg); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--purple); text-decoration: none; }
+    .nav-logo .q-badge { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700; background: var(--accent); color: var(--white); padding: 0.12rem 0.4rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+    .back-link { font-size: 0.82rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .back-link:hover { color: var(--purple); }
+    .hero { margin-top: 56px; background: linear-gradient(135deg, #3d3520 0%, #6b6030 40%, #8a7d3b 70%, var(--purple-dark) 100%); color: var(--white); padding: 3.5rem 2rem 3rem; text-align: center; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--purple); margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+    h2:first-of-type { margin-top: 0; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--purple-dark); margin: 1.25rem 0 0.4rem; }
+    h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin: 1rem 0 0.3rem; }
+    p { margin-bottom: 1rem; font-size: 0.92rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 1rem 1.25rem; font-size: 0.92rem; }
+    ul li { margin-bottom: 0.35rem; }
+    ul li::marker { color: var(--accent); }
+    .subject-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+    .subject-card h2 { margin-top: 0; border: none; padding-bottom: 0; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .subject-card h2 .icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
+    .icon-lal { background: #e0f0e8; } .icon-math { background: #fce4ec; } .icon-pbl { background: #fff3dc; } .icon-esp { background: #dceeff; }
+    .subsection { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0; }
+    .subsection h4 { margin-top: 0; }
+    .pbl-highlight { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.7; }
+    .pbl-highlight strong { color: var(--purple); }
+    .focus-box { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0 1rem; }
+    .focus-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .assessment-box { background: #f9f5ff; border: 1px solid #e8dff5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .assessment-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .contacts { background: var(--section-alt); border-radius: 10px; padding: 1.5rem 2rem; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .contact-block h4 { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
+    .contact-block .name { font-weight: 700; font-size: 0.92rem; }
+    .contact-block a { font-size: 0.82rem; color: var(--purple); text-decoration: none; display: block; margin-top: 0.15rem; }
+    .contact-block a:hover { text-decoration: underline; }
+    .contact-block .phone { font-size: 0.82rem; color: var(--text-light); margin-top: 0.1rem; }
+    .home-btn-wrap { text-align: center; margin-top: 2.5rem; }
+    .home-btn { display: inline-block; background: var(--purple); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.65rem 2rem; border-radius: 8px; transition: background 0.2s; }
+    .home-btn:hover { background: var(--purple-dark); }
+    footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.75rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+    @media (max-width: 600px) { .content { padding: 2rem 1.25rem; } .contacts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="overview-q2.html" class="nav-logo">True North School <span class="q-badge">Q2</span></a>
+    <a href="overview-q2.html" class="back-link">&larr; Back to Overview</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Upper Elementary &middot; Quarter II 2026</p>
+  <h1>5th Grade</h1>
+</header>
+
+<div class="content">
+
+  <!-- LANGUAGE ARTS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-lal">&#x1F4D6;</span> Language Arts</h2>
+
+    <h3>Reading Workshop</h3>
+    <p><strong>Tackling Complexity: Moving up Levels of Nonfiction</strong></p>
+    <p>In this nonfiction unit, students will immerse themselves in a novel that offers a window into real-life situations, fostering empathy for the characters. This exploration encourages an appreciation for the beauty found in both cultural similarities and differences. Understanding the plot&rsquo;s development hinges on considering the context and surroundings, prompting students to engage in personal research on historical matters.</p>
+    <p>Together, the class will delve into A Long Walk to Water by Linda Sue Park, a poignant tale set in war-torn Sudan. The narrative follows eleven-year-old Salva&rsquo;s harrowing journey as a refugee, paralleled by the daily struggles of eleven-year-old Nya, who walks miles to fetch water for her family. Both children exhibit resilience against unimaginable odds, their stories converging in a narrative of hope.</p>
+
+    <h3>Writing Workshop</h3>
+    <p><strong>The Lens of History: Research Reports</strong></p>
+    <p>This unit challenges students to craft informative essays and texts. Using their class novel as a model of nonfiction text, students will deconstruct the context and backstory, deepen their comprehension by researching topics from the novel, and refine their writing skills to eloquently convey their understanding of the material. This integrated approach enhances their ability to critically analyze and articulate historical narratives.</p>
+  </div>
+
+  <!-- MATHEMATICS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-math">&#x1F522;</span> Mathematics</h2>
+    <p>In the second quarter of 5th grade, Units 3 and 4 focus on enhancing students&rsquo; understanding of decimals and advancing their multiplication and division skills.</p>
+
+    <div class="subsection">
+      <h4>Unit 3 &mdash; Place Value &amp; Decimals</h4>
+      <p>This unit teaches students to read, write, order, and compare decimal numbers. They practice adding and subtracting decimals to the hundredths place, identify equivalent fractions and decimals, and multiply and divide whole and decimal numbers by powers of ten. The unit also emphasizes practical applications, such as solving money problems and using models to represent decimal place value.</p>
+    </div>
+
+    <div class="subsection">
+      <h4>Unit 4 &mdash; Multiplying &amp; Dividing Whole Numbers &amp; Decimals</h4>
+      <p>This unit builds computational fluency with a focus on multi-digit multiplication and division. Students learn a variety of strategies for solving these problems, including the standard algorithm, ratio tables, and partial products. They also begin multiplying and dividing decimal numbers, connecting these skills to real-world contexts such as calculating costs and quantities. Throughout the unit, students refine their understanding of place value and explore the relationship between multiplication and division.</p>
+    </div>
+
+    <p>These units work together to strengthen foundational skills while introducing more complex concepts and problem-solving strategies, preparing them for success in future mathematical challenges.</p>
+  </div>
+
+  <!-- PBL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-pbl">&#x1F3A8;</span> Project-Based Learning</h2>
+
+    <div class="pbl-highlight">
+      <strong>Earth&rsquo;s Systems</strong> &mdash; The Performance Expectations in Earth&rsquo;s Systems help students formulate an answer to the question, &ldquo;How do Earth&rsquo;s systems interact and shape the planet?&rdquo;
+    </div>
+
+    <p>Fifth-grade students explore the interactions between the geosphere, hydrosphere, atmosphere, and biosphere, learning how these systems affect each other through natural processes like the water cycle and erosion. Students investigate Earth&rsquo;s water distribution and create models to simulate how water moves through its various states and locations on the planet.</p>
+
+    <p>They also study natural disasters, such as hurricanes and earthquakes, to understand how Earth&rsquo;s systems interact during extreme events. By the end of their studies, students understand the dynamic nature of Earth and how humans impact its systems.</p>
+
+    <div class="focus-box">
+      <h4>Crosscutting Concepts</h4>
+      <ul>
+        <li><strong>Systems and systems models:</strong> Understanding how Earth&rsquo;s subsystems interact as a complex whole.</li>
+        <li><strong>Scale and proportion:</strong> Examining processes at different scales, from local erosion to global water cycles.</li>
+        <li><strong>Cause and effect:</strong> Analyzing how changes in one system trigger responses in others.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ESPA&Ntilde;OL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-esp">&#x1F1E8;&#x1F1F7;</span> Espa&ntilde;ol</h2>
+
+    <h3>Lectura</h3>
+    <p>Este bimestre se centrar&aacute; en la lectura de Cuando callaron las armas de Etna Iturralde, una novela que presenta las experiencias de ni&ntilde;os que viven en contextos de guerra. A trav&eacute;s de la lectura, los estudiantes analizar&aacute;n c&oacute;mo los autores describen ambientes, emociones y situaciones, y c&oacute;mo estos elementos ayudan a comprender el impacto de los conflictos en la vida de las personas. Se fomentar&aacute; la empat&iacute;a, el pensamiento cr&iacute;tico y la conexi&oacute;n entre los textos y la realidad.</p>
+
+    <h3>Escritura</h3>
+    <p>Los estudiantes desarrollar&aacute;n textos descriptivos en los que aprender&aacute;n a representar personas, lugares, objetos y emociones mediante el uso de detalles espec&iacute;ficos y lenguaje sensorial. Se trabajar&aacute; la organizaci&oacute;n l&oacute;gica de las ideas, el uso de conectores b&aacute;sicos y la ampliaci&oacute;n del vocabulario descriptivo para evitar repeticiones. A trav&eacute;s de la planificaci&oacute;n, la redacci&oacute;n y la revisi&oacute;n, los estudiantes fortalecer&aacute;n su capacidad para crear descripciones claras, ricas y visuales.</p>
+
+    <h3>Gram&aacute;tica</h3>
+    <p>El trabajo gramatical se enfocar&aacute; en el uso de pronombres, adjetivos, adverbios y preposiciones para lograr descripciones m&aacute;s precisas y cohesionadas. Estos elementos permitir&aacute;n que los estudiantes conecten ideas, expresen relaciones espaciales y temporales, y enriquezcan el lenguaje de sus textos descriptivos. La gram&aacute;tica ser&aacute; aplicada de manera constante dentro de las producciones escritas y orales.</p>
+
+    <h3>Ortograf&iacute;a</h3>
+    <p>Se reforzar&aacute; el uso de la acentuaci&oacute;n en palabras agudas, graves y esdr&uacute;julas, as&iacute; como en palabras complejas. Los estudiantes aplicar&aacute;n estas reglas en sus textos descriptivos y en ejercicios de revisi&oacute;n, mejorando la precisi&oacute;n y la calidad de su escritura.</p>
+
+    <h3>Producci&oacute;n Oral</h3>
+    <p>Los estudiantes realizar&aacute;n descripciones orales de personajes, ambientes y situaciones presentes en la novela. Estas actividades fortalecer&aacute;n su capacidad para expresarse con claridad, enriquecer su vocabulario y organizar ideas al hablar, conectando sus interpretaciones personales con los temas centrales del texto.</p>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+    <div class="contact-block">
+      <h4>Student Support Coordinator</h4>
+      <div class="name">Paz Olgu&iacute;n</div>
+      <a href="mailto:paz@truenorthcr.education">paz@truenorthcr.education</a>
+      <div class="phone">8863.4298</div>
+    </div>
+    <div class="contact-block">
+      <h4>Front Desk</h4>
+      <div class="name">Krissia Mu&ntilde;oz</div>
+      <a href="mailto:krissia@truenorthcr.education">krissia@truenorthcr.education</a>
+      <div class="phone">4033.4515</div>
+    </div>
+  </div>
+
+  <div class="home-btn-wrap">
+    <a href="overview-q2.html" class="home-btn">&larr; Back to Overview</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 True North School. Escaz&uacute;, Costa Rica.</footer>
+
+</body>
+</html>

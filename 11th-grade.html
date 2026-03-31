@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11th Grade — IBDP | True North School Q2 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --purple: #4a3a6b; --purple-light: #6b5b8a; --purple-dark: #2d2243; --accent: #c4a63a; --accent-light: #f5efd4; --warm-bg: #faf8f5; --text: #2d2243; --text-light: #6b6580; --white: #ffffff; --border: #e8e4ef; --section-alt: #f3f0f8; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--warm-bg); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--purple); text-decoration: none; }
+    .nav-logo .q-badge { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700; background: var(--accent); color: var(--white); padding: 0.12rem 0.4rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+    .back-link { font-size: 0.82rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .back-link:hover { color: var(--purple); }
+    .hero { margin-top: 56px; background: linear-gradient(135deg, #3d3520 0%, #6b6030 40%, #8a7d3b 70%, var(--purple-dark) 100%); color: var(--white); padding: 3.5rem 2rem 3rem; text-align: center; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+    .hero p { font-size: 0.95rem; opacity: 0.85; margin-top: 0.75rem; max-width: 550px; margin-left: auto; margin-right: auto; }
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+
+    .group-label { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--purple); margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+    .group-label:first-of-type { margin-top: 0; }
+
+    .ib-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+
+    .ib-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; text-decoration: none; color: var(--text); transition: border-color 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; gap: 0.5rem; }
+    .ib-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(74, 58, 107, 0.08); }
+    .ib-card .card-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .ib-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--purple-dark); line-height: 1.4; margin: 0; }
+    .ib-card .level { font-size: 0.75rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
+    .ib-card .desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; }
+    .ib-card .link-hint { font-size: 0.78rem; color: var(--purple); font-weight: 600; margin-top: auto; padding-top: 0.25rem; }
+
+    .icon-lang { background: #e0f0e8; } .icon-math { background: #fce4ec; } .icon-sci { background: #fff3dc; } .icon-arts { background: #f0e8f5; } .icon-soc { background: #dceeff; } .icon-core { background: #f5efd4; }
+
+    .contacts { background: var(--section-alt); border-radius: 10px; padding: 1.5rem 2rem; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .contact-block h4 { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
+    .contact-block .name { font-weight: 700; font-size: 0.92rem; }
+    .contact-block a { font-size: 0.82rem; color: var(--purple); text-decoration: none; display: block; margin-top: 0.15rem; }
+    .contact-block a:hover { text-decoration: underline; }
+    .contact-block .phone { font-size: 0.82rem; color: var(--text-light); margin-top: 0.1rem; }
+    .home-btn-wrap { text-align: center; margin-top: 2.5rem; }
+    .home-btn { display: inline-block; background: var(--purple); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.65rem 2rem; border-radius: 8px; transition: background 0.2s; }
+    .home-btn:hover { background: var(--purple-dark); }
+    footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.75rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+    @media (max-width: 600px) { .content { padding: 2rem 1.25rem; } .ib-grid { grid-template-columns: 1fr; } .contacts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="overview-q2.html" class="nav-logo">True North School <span class="q-badge">Q2</span></a>
+    <a href="overview-q2.html" class="back-link">&larr; Back to Overview</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">High School &middot; IB Diploma Programme &middot; Quarter II 2026</p>
+  <h1>11th Grade &mdash; IBDP</h1>
+  <p>Click any subject below to view the official IB course overview on the International Baccalaureate&reg; website.</p>
+</header>
+
+<div class="content">
+
+  <!-- GROUP 1: LANGUAGE & LITERATURE -->
+  <h2 class="group-label">Group 1 &mdash; Studies in Language &amp; Literature</h2>
+  <div class="ib-grid">
+    <a class="ib-card" href="https://www.ibo.org/programmes/diploma-programme/curriculum/language-and-literature/language-a-language-and-literature/" target="_blank" rel="noopener">
+      <span class="card-icon icon-lang">&#x1F4D6;</span>
+      <h3>Language and Literature</h3>
+      <span class="level">Higher Level (HL)</span>
+      <p class="desc">Explores how language develops in specific cultural contexts and how it impacts the world.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+    <a class="ib-card" href="https://www.ibo.org/programmes/diploma-programme/curriculum/language-and-literature/language-a-literature/" target="_blank" rel="noopener">
+      <span class="card-icon icon-lang">&#x1F4DA;</span>
+      <h3>Literatura</h3>
+      <span class="level">Nivel Superior (NS)</span>
+      <p class="desc">Estudio cr&iacute;tico de textos literarios de diversas &eacute;pocas, g&eacute;neros, estilos y contextos.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+  </div>
+
+  <!-- GROUP 3: INDIVIDUALS & SOCIETIES -->
+  <h2 class="group-label">Group 3 &mdash; Individuals &amp; Societies</h2>
+  <div class="ib-grid">
+    <a class="ib-card" href="https://www.ibo.org/programmes/diploma-programme/curriculum/individuals-and-societies/global-politics/" target="_blank" rel="noopener">
+      <span class="card-icon icon-soc">&#x1F30D;</span>
+      <h3>Global Politics</h3>
+      <span class="level">Higher Level (HL)</span>
+      <p class="desc">Explores fundamental political concepts such as power, equality, sustainability and peace.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+  </div>
+
+  <!-- GROUP 5: MATHEMATICS -->
+  <h2 class="group-label">Group 5 &mdash; Mathematics</h2>
+  <div class="ib-grid">
+    <a class="ib-card" href="https://ibo.org/programmes/diploma-programme/curriculum/mathematics/" target="_blank" rel="noopener">
+      <span class="card-icon icon-math">&#x1F522;</span>
+      <h3>Analysis and Approaches</h3>
+      <span class="level">SL / HL</span>
+      <p class="desc">Emphasis on algebraic methods, mathematical reasoning, and the ability to construct proofs.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+    <a class="ib-card" href="https://ibo.org/programmes/diploma-programme/curriculum/mathematics/" target="_blank" rel="noopener">
+      <span class="card-icon icon-math">&#x1F4CA;</span>
+      <h3>Applications and Interpretation</h3>
+      <span class="level">Standard Level (SL)</span>
+      <p class="desc">Focus on modelling, statistics and the use of technology in a data-rich world.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+  </div>
+
+  <!-- GROUP 4: SCIENCES -->
+  <h2 class="group-label">Group 4 &mdash; Sciences</h2>
+  <div class="ib-grid">
+    <a class="ib-card" href="https://www.ibo.org/programmes/diploma-programme/curriculum/sciences/physics/" target="_blank" rel="noopener">
+      <span class="card-icon icon-sci">&#x269B;&#xFE0F;</span>
+      <h3>Physics</h3>
+      <span class="level">Standard Level (SL)</span>
+      <p class="desc">Experimental science exploring forces, energy, and particles through theory and practical work.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+    <a class="ib-card" href="https://www.ibo.org/programmes/diploma-programme/curriculum/sciences/environmental-systems-and-societies/" target="_blank" rel="noopener">
+      <span class="card-icon icon-sci">&#x1F33F;</span>
+      <h3>Environmental Systems and Societies</h3>
+      <span class="level">Standard Level (SL)</span>
+      <p class="desc">Interdisciplinary course combining sciences and societies to address environmental issues.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+  </div>
+
+  <!-- GROUP 6: THE ARTS -->
+  <h2 class="group-label">Group 6 &mdash; The Arts</h2>
+  <div class="ib-grid">
+    <a class="ib-card" href="https://ibo.org/programmes/diploma-programme/curriculum/the-arts/music/" target="_blank" rel="noopener">
+      <span class="card-icon icon-arts">&#x1F3B5;</span>
+      <h3>Music</h3>
+      <span class="level">Standard Level (SL)</span>
+      <p class="desc">Develop as a researcher, creator and performer through diverse musical inquiry.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+    <a class="ib-card" href="https://ibo.org/programmes/diploma-programme/curriculum/the-arts/visual-arts/" target="_blank" rel="noopener">
+      <span class="card-icon icon-arts">&#x1F3A8;</span>
+      <h3>Visual Arts</h3>
+      <span class="level">Higher Level (HL)</span>
+      <p class="desc">Challenge creative and cultural boundaries through art-making, research and critical investigation.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+  </div>
+
+  <!-- DP CORE -->
+  <h2 class="group-label">DP Core</h2>
+  <div class="ib-grid">
+    <a class="ib-card" href="https://www.ibo.org/programmes/diploma-programme/curriculum/dp-core/creativity-activity-and-service/" target="_blank" rel="noopener">
+      <span class="card-icon icon-core">&#x1F91D;</span>
+      <h3>Creativity, Activity, Service (CAS)</h3>
+      <span class="level">Core</span>
+      <p class="desc">Experiential learning through creative, physical and service-oriented activities.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+    <a class="ib-card" href="https://ibo.org/programmes/diploma-programme/curriculum/dp-core/theory-of-knowledge/" target="_blank" rel="noopener">
+      <span class="card-icon icon-core">&#x1F4A1;</span>
+      <h3>Theory of Knowledge (TOK)</h3>
+      <span class="level">Core</span>
+      <p class="desc">Reflects on the nature of knowledge and how we know what we claim to know.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+    <a class="ib-card" href="https://ibo.org/programmes/diploma-programme/curriculum/dp-core/extended-essay/" target="_blank" rel="noopener">
+      <span class="card-icon icon-core">&#x1F4DD;</span>
+      <h3>Extended Essay</h3>
+      <span class="level">Core</span>
+      <p class="desc">Independent, self-directed research culminating in a 4,000-word paper.</p>
+      <span class="link-hint">View on ibo.org &rarr;</span>
+    </a>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+    <div class="contact-block">
+      <h4>Student Support &mdash; Psychologist</h4>
+      <div class="name">Roberto Torres</div>
+      <a href="mailto:ss.secondary@truenorthcr.education">ss.secondary@truenorthcr.education</a>
+      <div class="phone">8857.4683</div>
+    </div>
+    <div class="contact-block">
+      <h4>Front Desk</h4>
+      <div class="name">Yesenia Cano</div>
+      <a href="mailto:yesenia@truenorthcr.education">yesenia@truenorthcr.education</a>
+      <div class="phone">4034.5824</div>
+    </div>
+  </div>
+
+  <div class="home-btn-wrap">
+    <a href="overview-q2.html" class="home-btn">&larr; Back to Overview</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 True North School. Escaz&uacute;, Costa Rica.</footer>
+
+</body>
+</html>

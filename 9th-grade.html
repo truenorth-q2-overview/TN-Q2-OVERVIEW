@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9th Grade | True North School Q2 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --purple: #4a3a6b; --purple-light: #6b5b8a; --purple-dark: #2d2243; --accent: #c4a63a; --accent-light: #f5efd4; --warm-bg: #faf8f5; --text: #2d2243; --text-light: #6b6580; --white: #ffffff; --border: #e8e4ef; --section-alt: #f3f0f8; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--warm-bg); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--purple); text-decoration: none; }
+    .nav-logo .q-badge { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700; background: var(--accent); color: var(--white); padding: 0.12rem 0.4rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+    .back-link { font-size: 0.82rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .back-link:hover { color: var(--purple); }
+    .hero { margin-top: 56px; background: linear-gradient(135deg, #3d3520 0%, #6b6030 40%, #8a7d3b 70%, var(--purple-dark) 100%); color: var(--white); padding: 3.5rem 2rem 3rem; text-align: center; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--purple); margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+    h2:first-of-type { margin-top: 0; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--purple-dark); margin: 1.25rem 0 0.4rem; }
+    h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin: 1rem 0 0.3rem; }
+    p { margin-bottom: 1rem; font-size: 0.92rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 1rem 1.25rem; font-size: 0.92rem; }
+    ul li { margin-bottom: 0.35rem; }
+    ul li::marker { color: var(--accent); }
+    .subject-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+    .subject-card h2 { margin-top: 0; border: none; padding-bottom: 0; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .subject-card h2 .icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
+    .icon-lal { background: #e0f0e8; } .icon-math { background: #fce4ec; } .icon-chem { background: #fff3dc; } .icon-hist { background: #e8e0f0; } .icon-esp { background: #dceeff; }
+    .subsection { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0; }
+    .subsection h4 { margin-top: 0; }
+    .focus-box { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0 1rem; }
+    .focus-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .assessment-box { background: #f9f5ff; border: 1px solid #e8dff5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .assessment-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .contacts { background: var(--section-alt); border-radius: 10px; padding: 1.5rem 2rem; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .contact-block h4 { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
+    .contact-block .name { font-weight: 700; font-size: 0.92rem; }
+    .contact-block a { font-size: 0.82rem; color: var(--purple); text-decoration: none; display: block; margin-top: 0.15rem; }
+    .contact-block a:hover { text-decoration: underline; }
+    .contact-block .phone { font-size: 0.82rem; color: var(--text-light); margin-top: 0.1rem; }
+    .home-btn-wrap { text-align: center; margin-top: 2.5rem; }
+    .home-btn { display: inline-block; background: var(--purple); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.65rem 2rem; border-radius: 8px; transition: background 0.2s; }
+    .home-btn:hover { background: var(--purple-dark); }
+    footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.75rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+    @media (max-width: 600px) { .content { padding: 2rem 1.25rem; } .contacts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="overview-q2.html" class="nav-logo">True North School <span class="q-badge">Q2</span></a>
+    <a href="overview-q2.html" class="back-link">&larr; Back to Overview</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">High School &middot; Quarter II 2026</p>
+  <h1>9th Grade</h1>
+</header>
+
+<div class="content">
+
+  <!-- LANGUAGE ARTS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-lal">&#x1F4D6;</span> Language Arts</h2>
+
+    <h3>Journalism and Society</h3>
+    <p>In this unit, students explore how investigative journalism shapes society. They read both historic and modern examples of journalists who uncovered unsafe conditions, environmental dangers, and human rights abuses. Students examine how writers develop central ideas, how events connect across a text, and how word choice influences tone and meaning. They also compare how the same issue can be represented differently in print articles, opinion pieces, and multimedia sources.</p>
+    <p>Throughout the unit, students learn the core skills that real journalists use: asking strong research questions, selecting effective search terms, evaluating the credibility of sources, and organizing findings clearly for an audience. They practice writing with precision by choosing strong verbs, using academic vocabulary, and applying punctuation skills such as colons to clarify ideas.</p>
+    <p>Students also develop media literacy. They analyze the evolution of the news, consider how misinformation spreads, and study how different media formats emphasize different details. Through discussions, independent reading, and guided analysis, students build the ability to think critically about the information they consume.</p>
+    <p>The unit ends with a research-based presentation in which each student investigates a real case of journalism that exposed a problem or helped create social change. They present their findings using evidence, clear structure, and purposeful media to support understanding.</p>
+  </div>
+
+  <!-- MATHEMATICS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-math">&#x1F522;</span> Mathematics</h2>
+
+    <h3>Unit: Exploring Constant Change</h3>
+    <p>This quarter, students will broaden their understanding of linear functions, exploring concepts such as inverse functions and other types of function families, such as quadratic functions. They will also delve deeper into the different applications of each function, viewing them as models for representing the world.</p>
+
+    <div class="focus-box">
+      <h4>Key Concepts</h4>
+      <ul>
+        <li>Inverse functions</li>
+        <li>Quadratic Functions</li>
+        <li>Solving Quadratic Equations</li>
+        <li>Applications of Quadratics</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Essential Ideas</h4>
+      <ul>
+        <li>Functions are powerful tools for modeling real-world situations and understanding relationships between quantities.</li>
+        <li>Linear and inverse functions reveal how changes in one variable affect another in predictable ways.</li>
+        <li>Quadratic functions introduce non-linear relationships, allowing us to model phenomena such as projectile motion, area optimization, and growth patterns.</li>
+        <li>Solving quadratic equations is essential for finding unknown values in practical contexts, using methods like factoring, completing the square, and the quadratic formula.</li>
+        <li>Applications of quadratic functions demonstrate how mathematics connects to everyday life, science, and technology.</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Resources</h4>
+      <ul>
+        <li>Carnegie Learning &Aacute;lgebra I</li>
+        <li>Mathia Software</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHEMISTRY -->
+  <div class="subject-card">
+    <h2><span class="icon icon-chem">&#x1F9EA;</span> Chemistry</h2>
+
+    <h3>Structure and Properties of Matter</h3>
+    <p>The performance expectations in this topic help students formulate an answer to the question, &ldquo;How can one explain the structure and properties of matter?&rdquo; Two sub-ideas from the NRC Framework are addressed in these performance expectations: the structure and properties of matter, and nuclear processes.</p>
+    <p>Students are expected to develop an understanding of the substructure of atoms and provide more mechanistic explanations of the properties of substances. Students are able to use the periodic table as a tool to explain and predict the properties of elements. Phenomena involving nuclei are also important to understand, as they explain the formation and abundance of the elements, radioactivity, the release of energy from the sun and other stars, and the generation of nuclear power.</p>
+    <p>The crosscutting concepts of patterns, energy and matter, and structure and function are called out as organizing concepts for these disciplinary core ideas. Students are expected to demonstrate proficiency in developing and using models, planning and conducting investigations, and communicating scientific and technical information; and to use these practices to demonstrate understanding of the core ideas.</p>
+
+    <h3>Chemical Reactions</h3>
+    <p>The performance expectations in this topic help students formulate an answer to the questions: &ldquo;How do substances combine or change (react) to make new substances? How does one characterize and explain these reactions and make predictions about them?&rdquo;</p>
+    <p>Chemical reactions, including rates of reactions and energy changes, can be understood by students at this level in terms of the collisions of molecules and the rearrangements of atoms. Using this expanded knowledge of chemical reactions, students are able to explain important biological and geophysical phenomena. Students are also able to apply an understanding of the process of optimization in engineering design to chemical reaction systems.</p>
+    <p>The crosscutting concepts of patterns, energy and matter, and stability and change are called out as organizing concepts for these disciplinary core ideas. Students are expected to demonstrate proficiency in developing and using models, using mathematical thinking, constructing explanations, and designing solutions; and to use these practices to demonstrate understanding of the core ideas.</p>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="subject-card">
+    <h2><span class="icon icon-hist">&#x1F30D;</span> History</h2>
+
+    <h3>The Scientific Revolution, the Enlightenment, and the Industrial Revolution</h3>
+    <p>Students will explore the transformative periods of the Scientific Revolution, the Enlightenment, and the Industrial Revolution, building on their analytical and critical thinking skills. They will examine the key discoveries and advancements of the Scientific Revolution, understanding how they challenged traditional views of the universe and contributed to the development of modern science.</p>
+    <p>The focus will then shift to the Enlightenment, where students will analyze how Enlightenment philosophers applied scientific reasoning to ideas about human rights, governance, and society, continuing the intellectual revolution begun in science. Finally, students will delve into the Industrial Revolution, studying the technological innovations, economic changes, and social impacts that shaped the modern world.</p>
+    <p>Throughout the unit, students will refine their ability to analyze historical events and ideas, synthesizing information from multiple sources to form well-supported arguments in their writing.</p>
+  </div>
+
+  <!-- ESPA&Ntilde;OL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-esp">&#x1F1E8;&#x1F1F7;</span> Espa&ntilde;ol</h2>
+
+    <p><strong>Rutas Literarias:</strong> Noticia de un secuestro (Gabriel Garc&iacute;a M&aacute;rquez)</p>
+    <p>En el segundo quarter, los estudiantes de noveno grado profundizar&aacute;n en la intersecci&oacute;n entre el periodismo y la literatura a trav&eacute;s de una de las obras fundamentales de Garc&iacute;a M&aacute;rquez, enfoc&aacute;ndose en la complejidad narrativa y el rigor argumentativo.</p>
+
+    <h3>Contenido</h3>
+    <ul>
+      <li>Obra central: Noticia de un secuestro.</li>
+      <li>An&aacute;lisis literario formal: Temas complejos, simbolismo, tono, estilo y decisiones autorales.</li>
+      <li>Conceptos pre-IB: Perspectiva, representaci&oacute;n e identidad.</li>
+      <li>L&eacute;xico y estilo: Vocabulario t&eacute;cnico y variaci&oacute;n sint&aacute;ctica.</li>
+    </ul>
+
+    <h3>Actividades</h3>
+    <ul>
+      <li>Investigaci&oacute;n: An&aacute;lisis de la cr&iacute;tica period&iacute;stica en torno a la obra y su contexto.</li>
+      <li>Escritura creativa: Redacci&oacute;n de cr&oacute;nicas originales.</li>
+      <li>Oratoria: Discusiones formales sobre temas complejos extra&iacute;dos de la narrativa.</li>
+      <li>Debate formal: Ejercicios de debate con enfoque en la s&iacute;ntesis de argumentos.</li>
+    </ul>
+
+    <div class="assessment-box">
+      <h4>Oportunidades de Evaluaci&oacute;n</h4>
+      <ul>
+        <li>Ensayo literario: Evaluaci&oacute;n de estructuras avanzadas y coherencia argumentativa.</li>
+        <li>Portafolio de escritura: Cr&oacute;nica period&iacute;stica y an&aacute;lisis de estilo.</li>
+        <li>Desempe&ntilde;o oral: Evaluaci&oacute;n del debate formal y la capacidad de s&iacute;ntesis.</li>
+        <li>Prueba de an&aacute;lisis: Aplicaci&oacute;n de conceptos pre-IB (perspectiva y representaci&oacute;n).</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Conexi&oacute;n Interdisciplinaria</h4>
+      <ul>
+        <li><strong>Ciencias Sociales / Historia:</strong> Contexto pol&iacute;tico y social del narcoterrorismo en Colombia.</li>
+        <li><strong>Periodismo:</strong> La &eacute;tica de la informaci&oacute;n y la construcci&oacute;n de la verdad en la cr&oacute;nica.</li>
+      </ul>
+    </div>
+
+    <h3>Metas de aprendizaje</h3>
+    <ul>
+      <li><strong>Producci&oacute;n oral:</strong> Participar en debates formales logrando sintetizar puntos de vista complejos y mantener una oratoria t&eacute;cnica.</li>
+      <li><strong>Producci&oacute;n escrita:</strong> Redactar ensayos literarios con estructuras avanzadas, asegurando una coherencia argumentativa s&oacute;lida y variando la sintaxis.</li>
+      <li><strong>An&aacute;lisis de textos:</strong> Identificar y explicar el uso de s&iacute;mbolos, el tono y las decisiones autorales bajo el lente de conceptos pre-IB.</li>
+    </ul>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+    <div class="contact-block">
+      <h4>Student Support &mdash; Psychologist</h4>
+      <div class="name">Roberto Torres</div>
+      <a href="mailto:ss.secondary@truenorthcr.education">ss.secondary@truenorthcr.education</a>
+      <div class="phone">8857.4683</div>
+    </div>
+    <div class="contact-block">
+      <h4>Front Desk</h4>
+      <div class="name">Yesenia Cano</div>
+      <a href="mailto:yesenia@truenorthcr.education">yesenia@truenorthcr.education</a>
+      <div class="phone">4034.5824</div>
+    </div>
+  </div>
+
+  <div class="home-btn-wrap">
+    <a href="overview-q2.html" class="home-btn">&larr; Back to Overview</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 True North School. Escaz&uacute;, Costa Rica.</footer>
+
+</body>
+</html>

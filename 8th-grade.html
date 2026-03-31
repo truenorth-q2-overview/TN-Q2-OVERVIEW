@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8th Grade | True North School Q2 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --purple: #4a3a6b; --purple-light: #6b5b8a; --purple-dark: #2d2243; --accent: #c4a63a; --accent-light: #f5efd4; --warm-bg: #faf8f5; --text: #2d2243; --text-light: #6b6580; --white: #ffffff; --border: #e8e4ef; --section-alt: #f3f0f8; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--warm-bg); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--purple); text-decoration: none; }
+    .nav-logo .q-badge { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700; background: var(--accent); color: var(--white); padding: 0.12rem 0.4rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+    .back-link { font-size: 0.82rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .back-link:hover { color: var(--purple); }
+    .hero { margin-top: 56px; background: linear-gradient(135deg, #3d3520 0%, #6b6030 40%, #8a7d3b 70%, var(--purple-dark) 100%); color: var(--white); padding: 3.5rem 2rem 3rem; text-align: center; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--purple); margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+    h2:first-of-type { margin-top: 0; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--purple-dark); margin: 1.25rem 0 0.4rem; }
+    h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin: 1rem 0 0.3rem; }
+    p { margin-bottom: 1rem; font-size: 0.92rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 1rem 1.25rem; font-size: 0.92rem; }
+    ul li { margin-bottom: 0.35rem; }
+    ul li::marker { color: var(--accent); }
+    .subject-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+    .subject-card h2 { margin-top: 0; border: none; padding-bottom: 0; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .subject-card h2 .icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
+    .icon-lal { background: #e0f0e8; } .icon-math { background: #fce4ec; } .icon-sci { background: #fff3dc; } .icon-hist { background: #e8e0f0; } .icon-esp { background: #dceeff; }
+    .subsection { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0; }
+    .subsection h4 { margin-top: 0; }
+    .focus-box { background: var(--section-alt); border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0 1rem; }
+    .focus-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .assessment-box { background: #f9f5ff; border: 1px solid #e8dff5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .assessment-box h4 { margin-top: 0; font-size: 0.85rem; color: var(--purple); }
+    .contacts { background: var(--section-alt); border-radius: 10px; padding: 1.5rem 2rem; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .contact-block h4 { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
+    .contact-block .name { font-weight: 700; font-size: 0.92rem; }
+    .contact-block a { font-size: 0.82rem; color: var(--purple); text-decoration: none; display: block; margin-top: 0.15rem; }
+    .contact-block a:hover { text-decoration: underline; }
+    .contact-block .phone { font-size: 0.82rem; color: var(--text-light); margin-top: 0.1rem; }
+    .home-btn-wrap { text-align: center; margin-top: 2.5rem; }
+    .home-btn { display: inline-block; background: var(--purple); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.65rem 2rem; border-radius: 8px; transition: background 0.2s; }
+    .home-btn:hover { background: var(--purple-dark); }
+    footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.75rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+    @media (max-width: 600px) { .content { padding: 2rem 1.25rem; } .contacts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="overview-q2.html" class="nav-logo">True North School <span class="q-badge">Q2</span></a>
+    <a href="overview-q2.html" class="back-link">&larr; Back to Overview</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Middle School &middot; Quarter II 2026</p>
+  <h1>8th Grade</h1>
+</header>
+
+<div class="content">
+
+  <!-- LANGUAGE ARTS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-lal">&#x1F4D6;</span> Language Arts</h2>
+
+    <h3>Resilience and Power: Analyzing Identity and Overcoming Adversity in The Breadwinner</h3>
+    <p>In this integrated reading and writing unit, students will strengthen their reading comprehension, analytical thinking, and ability to express insights about literature. Through a focus on reading identity and comprehension strategies &mdash; such as summarizing, analyzing complex ideas, and examining power systems &mdash; students will learn to approach challenging texts with curiosity and confidence.</p>
+    <p>The core novel The Breadwinner by Deborah Ellis serves as the anchor text, offering students rich opportunities to analyze resilience, oppression, and the dynamics of power through Parvana&rsquo;s experiences in Taliban-controlled Afghanistan.</p>
+    <p>Alongside this reading work, students will learn to craft literary essays that clearly communicate their interpretations of the text. They will develop skills in thesis writing, organizing ideas, selecting and explaining textual evidence, and refining their arguments through structured revision. By uniting deep reading with clear, purposeful writing, this unit supports students in building a nuanced understanding of literature and expressing their ideas with clarity and confidence.</p>
+  </div>
+
+  <!-- MATHEMATICS -->
+  <div class="subject-card">
+    <h2><span class="icon icon-math">&#x1F522;</span> Mathematics</h2>
+
+    <h3>Module 2: Functions and the Number System</h3>
+    <p>In this module, students expand their understanding of numbers and relationships by exploring the real number system, powers and exponents, and the concept of functions. Students focus on how quantities change, how numbers are represented, and how inputs and outputs are connected. The module emphasizes structure, patterns, and multiple representations.</p>
+
+    <div class="focus-box">
+      <h4>What Students Will Do</h4>
+      <ul>
+        <li>Classify and compare real numbers</li>
+        <li>Work with powers, exponents, and square roots</li>
+        <li>Use scientific notation to represent large and small numbers</li>
+        <li>Understand and define functions</li>
+        <li>Represent functions using tables, graphs, and equations</li>
+        <li>Interpret functions in real-world contexts</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h4>Topic 1: The Real Number System</h4>
+      <p>Students classify numbers as rational or irrational and understand how square roots relate to the real number system. They compare values and explain relationships between different types of numbers.</p>
+      <p><strong>Standards:</strong> 8.NS.1, 8.NS.2</p>
+    </div>
+
+    <div class="subsection">
+      <h4>Topic 2: Powers, Exponents and Scientific Notation</h4>
+      <p>Students apply properties of exponents, work with powers of 10, and use scientific notation to represent very large or very small numbers. Emphasis is placed on reasoning, estimation, and real-world applications.</p>
+      <p><strong>Standards:</strong> 8.EE.1, 8.EE.3, 8.EE.4</p>
+    </div>
+
+    <div class="subsection">
+      <h4>Topic 3: Introduction to Functions</h4>
+      <p>Students learn what makes a relationship a function and how to represent functions using tables, graphs, equations, and verbal descriptions. They analyze inputs and outputs and interpret functions in context.</p>
+      <p><strong>Standards:</strong> 8.F.1, 8.F.2, 8.F.3, 8.F.4, 8.F.5</p>
+    </div>
+
+    <div class="focus-box">
+      <h4>Resources</h4>
+      <ul>
+        <li>Carnegie Learning 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCIENCE -->
+  <div class="subject-card">
+    <h2><span class="icon icon-sci">&#x1F52C;</span> Science</h2>
+
+    <h3>History of Earth</h3>
+    <p>The performance expectations help students formulate answers to the questions: &ldquo;How do people figure out that the Earth and life on Earth have changed over time?&rdquo; and &ldquo;How does the movement of tectonic plates impact the surface of Earth?&rdquo; Four sub-ideas from the NRC Framework are addressed in these performance expectations: ESS1.C, ESS2.A, ESS2.B, and ESS2.C.</p>
+    <p>Students can examine geoscience data in order to understand the processes and events in Earth&rsquo;s history. Important concepts in this topic are &ldquo;Scale, Proportion, and Quantity&rdquo; and &ldquo;Stability and Change,&rdquo; in relation to the different ways geologic processes operate over the long expanse of geologic time.</p>
+    <p>An important aspect of the history of Earth is that geologic events and conditions have affected the evolution of life, but different life forms have also played important roles in altering Earth&rsquo;s systems. In the MS History of Earth performance expectations, students are expected to demonstrate proficiency in analyzing and interpreting data, and constructing explanations; and to use these practices to demonstrate understanding of the core ideas.</p>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="subject-card">
+    <h2><span class="icon icon-hist">&#x1F30D;</span> History</h2>
+
+    <h3>Colonialism in the Americas (15th &ndash; 18th Centuries)</h3>
+    <p>During the second quarter, students will study the period of colonialism in the 15th to 18th centuries in the Americas. To do so, they will study a sampling of indigenous cultures of the continent to understand what life was like here before the arrival of Europeans, and then explore how the arrival of the Spanish, Portuguese, English, and French changed life.</p>
+    <p>We will look at colonial structures and systems and the impacts these had on the local populations and look at the global impact of the Columbian Exchange. Additionally, we will begin touching on emerging trends to lay down the foundations for later independence movements through the continent.</p>
+    <p>Students will continue to work with historical reading and thinking skills, including through examining primary and secondary documents, further developing comparison and contrast skills, and beginning to develop more analysis into their writing.</p>
+  </div>
+
+  <!-- ESPA&Ntilde;OL -->
+  <div class="subject-card">
+    <h2><span class="icon icon-esp">&#x1F1E8;&#x1F1F7;</span> Espa&ntilde;ol</h2>
+
+    <p><strong>Rutas Literarias: Uvieta</strong> &mdash; Estudio integral que abarca tanto la narrativa (cuento) como la dramaturgia (teatro).</p>
+
+    <h3>Metas de Aprendizaje</h3>
+    <ul>
+      <li>Desarrollar un an&aacute;lisis ret&oacute;rico profundo aplicado a discursos y cr&oacute;nicas.</li>
+      <li>Perfeccionar la oralidad mediante el debate formal y el uso de apoyos multimodales.</li>
+      <li>Dominar la sintaxis avanzada y el uso intencional del l&eacute;xico para elevar el registro comunicativo.</li>
+    </ul>
+
+    <h3>Contenido</h3>
+    <ul>
+      <li>Literatura y Ret&oacute;rica: An&aacute;lisis de Uvieta y estudio de discursos y cr&oacute;nicas.</li>
+      <li>Lengua: Sintaxis avanzada, conectores l&oacute;gicos, control de la cohesi&oacute;n y adecuaci&oacute;n del registro.</li>
+      <li>L&eacute;xico y Estilo: Vocabulario preciso y variaciones estil&iacute;sticas intencionales.</li>
+    </ul>
+
+    <h3>An&aacute;lisis de Textos</h3>
+    <ul>
+      <li>Investigaci&oacute;n y desglose de art&iacute;culos, ensayos breves, cr&oacute;nicas y reportajes.</li>
+      <li>Evaluaci&oacute;n cr&iacute;tica de argumentos y estrategias ret&oacute;ricas b&aacute;sicas.</li>
+    </ul>
+
+    <h3>Producci&oacute;n Oral</h3>
+    <ul>
+      <li>Debate formal: Ejercicio de argumentaci&oacute;n l&oacute;gica y claridad.</li>
+      <li>Presentaciones tem&aacute;ticas: Exposiciones con apoyo multimodal.</li>
+    </ul>
+
+    <h3>Producci&oacute;n Escrita</h3>
+    <ul>
+      <li>Redacci&oacute;n de ensayos breves y an&aacute;lisis de investigaci&oacute;n.</li>
+      <li>Aplicaci&oacute;n de conectores l&oacute;gicos y estructuras sint&aacute;cticas complejas para asegurar la fluidez.</li>
+    </ul>
+
+    <h3>Actividades</h3>
+    <ul>
+      <li>Exposici&oacute;n formal sobre conceptos de ret&oacute;rica.</li>
+      <li>&ldquo;Puente&rdquo; anal&iacute;tico: Actividad de conexi&oacute;n entre discursos, cr&oacute;nicas y herramientas ret&oacute;ricas.</li>
+      <li>An&aacute;lisis de fuentes de investigaci&oacute;n (reportajes y art&iacute;culos).</li>
+    </ul>
+
+    <div class="assessment-box">
+      <h4>Oportunidades de Evaluaci&oacute;n</h4>
+      <ul>
+        <li>Evaluaci&oacute;n de la participaci&oacute;n y desempe&ntilde;o en el debate formal.</li>
+        <li>Calificaci&oacute;n de la exposici&oacute;n tem&aacute;tica y el uso de recursos multimodales.</li>
+        <li>Revisi&oacute;n de ensayos y an&aacute;lisis ret&oacute;ricos escritos.</li>
+      </ul>
+    </div>
+
+    <div class="focus-box">
+      <h4>Conexi&oacute;n Interdisciplinaria</h4>
+      <p>Vinculaci&oacute;n con Estudios Sociales e Historia a trav&eacute;s del an&aacute;lisis de discursos y cr&oacute;nicas que reflejan contextos sociopol&iacute;ticos.</p>
+    </div>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+    <div class="contact-block">
+      <h4>Student Support &mdash; Psychologist</h4>
+      <div class="name">Roberto Torres</div>
+      <a href="mailto:ss.secondary@truenorthcr.education">ss.secondary@truenorthcr.education</a>
+      <div class="phone">8857.4683</div>
+    </div>
+    <div class="contact-block">
+      <h4>Front Desk</h4>
+      <div class="name">Yesenia Cano</div>
+      <a href="mailto:yesenia@truenorthcr.education">yesenia@truenorthcr.education</a>
+      <div class="phone">4034.5824</div>
+    </div>
+  </div>
+
+  <div class="home-btn-wrap">
+    <a href="overview-q2.html" class="home-btn">&larr; Back to Overview</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 True North School. Escaz&uacute;, Costa Rica.</footer>
+
+</body>
+</html>

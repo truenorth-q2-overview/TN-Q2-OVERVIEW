@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>True North School — Overview 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #4a3a6b;
+      --purple-light: #6b5b8a;
+      --purple-dark: #2d2243;
+      --orange: #f26b3a;
+      --orange-light: #ff8c5a;
+      --warm-bg: #faf8f5;
+      --text: #2d2243;
+      --text-light: #6b6580;
+      --white: #ffffff;
+      --border: #e8e4ef;
+      --section-alt: #f3f0f8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--warm-bg);
+      line-height: 1.6;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700; color: var(--purple);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-light); font-size: 0.85rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--purple); }
+
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px; background: var(--text);
+      margin: 5px 0; transition: 0.3s;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      margin-top: 60px;
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 50%, var(--purple-light) 100%);
+      color: var(--white);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -50%; right: -20%; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(242,107,58,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 700; margin-bottom: 0.5rem;
+      position: relative;
+    }
+    .hero .subtitle {
+      font-size: 1.15rem; font-weight: 500; opacity: 0.85;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      position: relative;
+    }
+    .hero .location {
+      margin-top: 1rem; font-size: 0.9rem; opacity: 0.65;
+      position: relative;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 4rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; color: var(--purple);
+      margin-bottom: 1.5rem; text-align: center;
+    }
+    .section-subtitle {
+      text-align: center; color: var(--text-light);
+      max-width: 680px; margin: -0.5rem auto 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- PILLARS ---------- */
+    .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .pillar {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .pillar:hover { box-shadow: 0 8px 30px rgba(74,58,107,0.08); transform: translateY(-2px); }
+    .pillar-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1rem;
+    }
+    .pillar-icon.character { background: #f0e6ff; }
+    .pillar-icon.pbl { background: #ffe8de; }
+    .pillar-icon.literacy { background: #e0f0e8; }
+    .pillar h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--purple); }
+    .pillar p { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; }
+
+    /* ---------- GRADE DIVISIONS ---------- */
+    .alt-bg { background: var(--section-alt); }
+
+    .division-label {
+      display: inline-block;
+      background: var(--purple);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    .division-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .grade-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .grade-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .grade-card:hover {
+      box-shadow: 0 6px 24px rgba(74,58,107,0.1);
+      transform: translateY(-3px);
+      border-color: var(--purple-light);
+    }
+    .grade-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700;
+      color: var(--purple);
+      line-height: 1;
+    }
+    .grade-label {
+      font-size: 0.8rem; font-weight: 600; color: var(--text-light);
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+    .grade-nickname {
+      font-size: 0.78rem;
+      color: var(--orange);
+      font-weight: 500;
+      margin-top: 0.35rem;
+    }
+    .grade-subjects {
+      margin-top: 0.75rem;
+      display: flex; flex-wrap: wrap; gap: 0.3rem; justify-content: center;
+    }
+    .subject-tag {
+      font-size: 0.65rem; font-weight: 600;
+      background: var(--section-alt);
+      color: var(--text-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    /* ---------- STAFF ---------- */
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .staff-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--border);
+    }
+    .staff-role {
+      font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--orange); margin-bottom: 0.35rem;
+    }
+    .staff-name {
+      font-weight: 700; font-size: 1rem; margin-bottom: 0.15rem;
+    }
+    .staff-detail {
+      font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.1rem;
+    }
+    .staff-email {
+      font-size: 0.8rem; color: var(--purple); text-decoration: none;
+    }
+    .staff-email:hover { text-decoration: underline; }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 60px; left: 0; right: 0;
+        background: var(--white); padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      }
+      section { padding: 3rem 1.25rem; }
+      .grade-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .grade-grid { grid-template-columns: 1fr; }
+      .staff-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">True North School</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#methodology">Methodology</a></li>
+      <li><a href="#preschool">Preschool</a></li>
+      <li><a href="#lower-elem">Lower Elementary</a></li>
+      <li><a href="#upper-elem">Upper Elementary</a></li>
+      <li><a href="#middle">Middle School</a></li>
+      <li><a href="#high">High School</a></li>
+      <li><a href="#team">Team</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>True North School</h1>
+  <p class="subtitle">Overview 2026</p>
+  <p class="location">Escaz&uacute;, Costa Rica</p>
+</header>
+
+<!-- METHODOLOGY -->
+<section id="methodology">
+  <div class="container">
+    <h2 class="section-title">Educational Methodology</h2>
+    <p class="section-subtitle">True North's pillars of education provide a holistic learning experience that develops both the character and intellect of our students through three interrelated components.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon character">&#x2728;</div>
+        <h3>Awaken Your True North</h3>
+        <p>Development of character qualities through conscious leadership. We nurture students' abilities to interact and adapt to their dynamic surroundings, emphasizing both individual and collective well-being, ensuring students mature into compassionate leaders.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon pbl">&#x1F3D7;&#xFE0F;</div>
+        <h3>Project-Based Learning</h3>
+        <p>Our curriculum integrates competencies with real-world applications, challenging students to address tangible global issues. Each quarter culminates in a project that harmonizes academic learning with character development, fostering initiative, persistence, and critical thinking.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon literacy">&#x1F4DA;</div>
+        <h3>Foundational Literacies</h3>
+        <p>We emphasize essential proficiencies in reading, writing, mathematics, scientific understanding, cultural, civic, and emerging literacies like technology and finance. These are integrated into everyday scenarios so students apply knowledge in practical, meaningful contexts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESCHOOL -->
+<section id="preschool" class="alt-bg">
+  <div class="container">
+    <div class="division-header">
+      <span class="division-label">Preschool</span>
+    </div>
+    <div class="grade-grid">
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/toddler">
+        <span class="grade-number">T</span>
+        <span class="grade-label">Toddler</span>
+        <span class="grade-nickname">Giants</span>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/prek">
+        <span class="grade-number">PK</span>
+        <span class="grade-label">PreK</span>
+        <span class="grade-nickname">Scouts</span>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/kinder">
+        <span class="grade-number">K</span>
+        <span class="grade-label">Kinder</span>
+        <span class="grade-nickname">Explorers</span>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/prep">
+        <span class="grade-number">P</span>
+        <span class="grade-label">Prep</span>
+        <span class="grade-nickname">Adventurers</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">PBL</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LOWER ELEMENTARY -->
+<section id="lower-elem">
+  <div class="container">
+    <div class="division-header">
+      <span class="division-label">Lower Elementary</span>
+    </div>
+    <div class="grade-grid">
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/1st-grade">
+        <span class="grade-number">1<sup>st</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">PBL</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+        </div>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/2nd-grade">
+        <span class="grade-number">2<sup>nd</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">PBL</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+        </div>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/3rd-grade">
+        <span class="grade-number">3<sup>rd</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">PBL</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- UPPER ELEMENTARY -->
+<section id="upper-elem" class="alt-bg">
+  <div class="container">
+    <div class="division-header">
+      <span class="division-label">Upper Elementary</span>
+    </div>
+    <div class="grade-grid">
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/4th-grade">
+        <span class="grade-number">4<sup>th</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">PBL</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+        </div>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/5th-grade">
+        <span class="grade-number">5<sup>th</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">PBL</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MIDDLE SCHOOL -->
+<section id="middle">
+  <div class="container">
+    <div class="division-header">
+      <span class="division-label">Middle School</span>
+    </div>
+    <div class="grade-grid">
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/6th-grade">
+        <span class="grade-number">6<sup>th</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">Science</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+        </div>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/7th-grade">
+        <span class="grade-number">7<sup>th</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">Science</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+        </div>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/8th-grade">
+        <span class="grade-number">8<sup>th</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">Science</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+          <span class="subject-tag">History</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HIGH SCHOOL -->
+<section id="high" class="alt-bg">
+  <div class="container">
+    <div class="division-header">
+      <span class="division-label">High School</span>
+    </div>
+    <div class="grade-grid">
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/9th-grade">
+        <span class="grade-number">9<sup>th</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">Science</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+          <span class="subject-tag">History</span>
+        </div>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/10th-grade">
+        <span class="grade-number">10<sup>th</sup></span>
+        <span class="grade-label">Grade</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">LAL</span>
+          <span class="subject-tag">Math</span>
+          <span class="subject-tag">Science</span>
+          <span class="subject-tag">Espa&ntilde;ol</span>
+          <span class="subject-tag">History</span>
+        </div>
+      </a>
+      <a class="grade-card" href="https://sites.google.com/truenorthcr.education/true-north-school/11th-grade">
+        <span class="grade-number">11<sup>th</sup></span>
+        <span class="grade-label">Grade &middot; IB</span>
+        <div class="grade-subjects">
+          <span class="subject-tag">Lang &amp; Lit</span>
+          <span class="subject-tag">Literature</span>
+          <span class="subject-tag">Physics</span>
+          <span class="subject-tag">Env. Sci</span>
+          <span class="subject-tag">Math AA</span>
+          <span class="subject-tag">Math AI</span>
+          <span class="subject-tag">Global Politics</span>
+          <span class="subject-tag">Visual Arts</span>
+          <span class="subject-tag">TOK</span>
+          <span class="subject-tag">CAS</span>
+          <span class="subject-tag">EE</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <h2 class="section-title">Our Team</h2>
+    <p class="section-subtitle">Get in touch with coordinators and leadership.</p>
+
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-role">Founder &amp; General Director</div>
+        <div class="staff-name">Natalie Farrer</div>
+        <a class="staff-email" href="mailto:natalie@truenorthcr.education">natalie@truenorthcr.education</a>
+      </div>
+      <div class="staff-card">
+        <div class="staff-role">Administrative Director</div>
+        <div class="staff-name">Erika Qui&ntilde;ones</div>
+        <a class="staff-email" href="mailto:erika@truenorthcr.education">erika@truenorthcr.education</a>
+      </div>
+      <div class="staff-card">
+        <div class="staff-role">Language Arts Coordinator</div>
+        <div class="staff-name">Carolina Kelso</div>
+        <div class="staff-detail">K-12</div>
+        <a class="staff-email" href="mailto:carolina.k@truenorthcr.education">carolina.k@truenorthcr.education</a>
+      </div>
+      <div class="staff-card">
+        <div class="staff-role">Preschool Coordinator</div>
+        <div class="staff-name">Paola Esquivel</div>
+        <div class="staff-detail">Toddler, PreK, Kinder &amp; Prep</div>
+        <a class="staff-email" href="mailto:paola@truenorthcr.education">paola@truenorthcr.education</a>
+      </div>
+      <div class="staff-card">
+        <div class="staff-role">Secondary Principal &amp; Science Coordinator</div>
+        <div class="staff-name">Jason Brewer</div>
+        <a class="staff-email" href="mailto:jason@truenorthcr.education">jason@truenorthcr.education</a>
+      </div>
+      <div class="staff-card">
+        <div class="staff-role">Project Based Learning Coordinator</div>
+        <div class="staff-name">Elena Gross</div>
+        <a class="staff-email" href="mailto:elena@truenorthcr.education">elena@truenorthcr.education</a>
+      </div>
+      <div class="staff-card">
+        <div class="staff-role">Mathematics Coordinators</div>
+        <div class="staff-name">Francisco Herrera</div>
+        <a class="staff-email" href="mailto:francisco@truenorthcr.education">francisco@truenorthcr.education</a>
+        <div class="staff-name" style="margin-top:0.5rem">Montserrat Villacis</div>
+        <a class="staff-email" href="mailto:montserrat@truenorthcr.education">montserrat@truenorthcr.education</a>
+      </div>
+      <div class="staff-card">
+        <div class="staff-role">Student Support Coordinators</div>
+        <div class="staff-name">Paz Olgu&iacute;n</div>
+        <a class="staff-email" href="mailto:paz@truenorthcr.education">paz@truenorthcr.education</a>
+        <div class="staff-name" style="margin-top:0.5rem">Scarleth Barrantes</div>
+        <a class="staff-email" href="mailto:scarleth@truenorthcr.education">scarleth@truenorthcr.education</a>
+        <div class="staff-name" style="margin-top:0.5rem">Roberto Torres</div>
+        <a class="staff-email" href="mailto:ss.secondary@truenorthcr.education">ss.secondary@truenorthcr.education</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 True North School. Escaz&uacute;, Costa Rica.
+</footer>
+
+</body>
+</html>
